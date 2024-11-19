@@ -1,0 +1,16 @@
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\bin\Debug\net8.0-windows\ProjectStore.exe
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\bin\Debug\net8.0-windows\ProjectStore.deps.json
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\bin\Debug\net8.0-windows\ProjectStore.runtimeconfig.json
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\bin\Debug\net8.0-windows\ProjectStore.dll
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\bin\Debug\net8.0-windows\ProjectStore.pdb
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.csproj.GenerateResource.cache
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.AssemblyInfoInputs.cache
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.AssemblyInfo.cs
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.csproj.CoreCompileInputs.cache
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.dll
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\refint\ProjectStore.dll
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.pdb
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.genruntimeconfig.cache
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ref\ProjectStore.dll
+D:\Usuarios\dam2\source\repos\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.Login.resources
