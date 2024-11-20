@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Usuarios\\dam2\\source\\repos\\MiniReto_interfaz_principal\\",
+  "WorkspaceRootPath": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\MiniReto_interfaz_principal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|d:\\usuarios\\dam2\\source\\repos\\minireto_interfaz_principal\\minireto_interfaz_principal\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|solutionrelative:minireto_interfaz_principal\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|d:\\usuarios\\dam2\\source\\repos\\minireto_interfaz_principal\\minireto_interfaz_principal\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|d:\\usuarios\\dam2\\desktop\\mini_reto_di\\minireto_interfaz_principal\\minireto_interfaz_principal\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|solutionrelative:minireto_interfaz_principal\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|d:\\usuarios\\dam2\\source\\repos\\minireto_interfaz_principal\\minireto_interfaz_principal\\principal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|d:\\usuarios\\dam2\\desktop\\mini_reto_di\\minireto_interfaz_principal\\minireto_interfaz_principal\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|solutionrelative:minireto_interfaz_principal\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|d:\\usuarios\\dam2\\desktop\\mini_reto_di\\minireto_interfaz_principal\\minireto_interfaz_principal\\principal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F65D607-A971-4158-A5D3-7737C61C3652}|MiniReto_interfaz_principal\\MiniReto_interfaz_principal.csproj|solutionrelative:minireto_interfaz_principal\\principal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,45 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Principal.cs",
-              "DocumentMoniker": "D:\\Usuarios\\dam2\\source\\repos\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs",
               "RelativeDocumentMoniker": "MiniReto_interfaz_principal\\Principal.cs",
-              "ToolTip": "D:\\Usuarios\\dam2\\source\\repos\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs",
               "RelativeToolTip": "MiniReto_interfaz_principal\\Principal.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAawCkAAAA1AAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAD4vykAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T18:41:34.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Usuarios\\dam2\\source\\repos\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs",
+              "DocumentIndex": 1,
+              "Title": "Principal.cs [Design]",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs",
               "RelativeDocumentMoniker": "MiniReto_interfaz_principal\\Principal.cs",
-              "ToolTip": "D:\\Usuarios\\dam2\\source\\repos\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "MiniReto_interfaz_principal\\Principal.cs [Dise\u00F1o]",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.cs [Design]",
+              "RelativeToolTip": "MiniReto_interfaz_principal\\Principal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T18:21:00.288Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Principal.Designer.cs",
-              "DocumentMoniker": "D:\\Usuarios\\dam2\\source\\repos\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.Designer.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.Designer.cs",
               "RelativeDocumentMoniker": "MiniReto_interfaz_principal\\Principal.Designer.cs",
-              "ToolTip": "D:\\Usuarios\\dam2\\source\\repos\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.Designer.cs",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\MiniReto_interfaz_principal\\MiniReto_interfaz_principal\\Principal.Designer.cs",
               "RelativeToolTip": "MiniReto_interfaz_principal\\Principal.Designer.cs",
               "ViewState": "AQIAAEAAAAAAAAAAAAAhwE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T18:20:53.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T18:20:53.657Z"
             }
           ]
         }

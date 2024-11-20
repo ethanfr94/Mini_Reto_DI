@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniReto_interfaz_principal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47cf5d985753bae5d066709889fbd247ec921dbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniReto_interfaz_principal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniReto_interfaz_principal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
