@@ -33,7 +33,8 @@
             tsmiVerCiclos = new ToolStripMenuItem();
             txmiProfesores = new ToolStripMenuItem();
             tsmiVerProfesores = new ToolStripMenuItem();
-            tsmiModificarTutorias = new ToolStripMenuItem();
+            añadirProfesorToolStripMenuItem = new ToolStripMenuItem();
+            modificarProfesorToolStripMenuItem = new ToolStripMenuItem();
             tsmiAlumnos = new ToolStripMenuItem();
             tsmiVerAlumnos = new ToolStripMenuItem();
             añadirAlumnoToolStripMenuItem = new ToolStripMenuItem();
@@ -72,7 +73,7 @@
             // 
             // txmiProfesores
             // 
-            txmiProfesores.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerProfesores, tsmiModificarTutorias });
+            txmiProfesores.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerProfesores, añadirProfesorToolStripMenuItem, modificarProfesorToolStripMenuItem });
             txmiProfesores.Name = "txmiProfesores";
             txmiProfesores.Size = new Size(74, 20);
             txmiProfesores.Text = "Profesores";
@@ -80,15 +81,22 @@
             // tsmiVerProfesores
             // 
             tsmiVerProfesores.Name = "tsmiVerProfesores";
-            tsmiVerProfesores.Size = new Size(170, 22);
+            tsmiVerProfesores.Size = new Size(172, 22);
             tsmiVerProfesores.Text = "Ver Profesores";
             tsmiVerProfesores.Click += tsmiVerProfesores_Click;
             // 
-            // tsmiModificarTutorias
+            // añadirProfesorToolStripMenuItem
             // 
-            tsmiModificarTutorias.Name = "tsmiModificarTutorias";
-            tsmiModificarTutorias.Size = new Size(170, 22);
-            tsmiModificarTutorias.Text = "Modificar Tutorias";
+            añadirProfesorToolStripMenuItem.Name = "añadirProfesorToolStripMenuItem";
+            añadirProfesorToolStripMenuItem.Size = new Size(172, 22);
+            añadirProfesorToolStripMenuItem.Text = "Añadir Profesor";
+            añadirProfesorToolStripMenuItem.Click += añadirProfesorToolStripMenuItem_Click;
+            // 
+            // modificarProfesorToolStripMenuItem
+            // 
+            modificarProfesorToolStripMenuItem.Name = "modificarProfesorToolStripMenuItem";
+            modificarProfesorToolStripMenuItem.Size = new Size(172, 22);
+            modificarProfesorToolStripMenuItem.Text = "Modificar Profesor";
             // 
             // tsmiAlumnos
             // 
@@ -109,6 +117,7 @@
             añadirAlumnoToolStripMenuItem.Name = "añadirAlumnoToolStripMenuItem";
             añadirAlumnoToolStripMenuItem.Size = new Size(171, 22);
             añadirAlumnoToolStripMenuItem.Text = "Añadir Alumno";
+            añadirAlumnoToolStripMenuItem.Click += añadirAlumnoToolStripMenuItem_Click;
             // 
             // modificarAlumnoToolStripMenuItem
             // 
@@ -126,20 +135,21 @@
             // verProyectosToolStripMenuItem
             // 
             verProyectosToolStripMenuItem.Name = "verProyectosToolStripMenuItem";
-            verProyectosToolStripMenuItem.Size = new Size(175, 22);
+            verProyectosToolStripMenuItem.Size = new Size(180, 22);
             verProyectosToolStripMenuItem.Text = "Ver Proyectos";
             verProyectosToolStripMenuItem.Click += verProyectosToolStripMenuItem_Click;
             // 
             // añadirProyectosToolStripMenuItem
             // 
             añadirProyectosToolStripMenuItem.Name = "añadirProyectosToolStripMenuItem";
-            añadirProyectosToolStripMenuItem.Size = new Size(175, 22);
+            añadirProyectosToolStripMenuItem.Size = new Size(180, 22);
             añadirProyectosToolStripMenuItem.Text = "Añadir Proyecto";
+            añadirProyectosToolStripMenuItem.Click += añadirProyectosToolStripMenuItem_Click;
             // 
             // modificarProyectosToolStripMenuItem
             // 
             modificarProyectosToolStripMenuItem.Name = "modificarProyectosToolStripMenuItem";
-            modificarProyectosToolStripMenuItem.Size = new Size(175, 22);
+            modificarProyectosToolStripMenuItem.Size = new Size(180, 22);
             modificarProyectosToolStripMenuItem.Text = "Modificar Proyecto";
             // 
             // tsmiLogOut
@@ -188,12 +198,13 @@
         private ListView ltvListaPrincipal;
         private ToolStripMenuItem tsmiVerCiclos;
         private ToolStripMenuItem tsmiVerProfesores;
-        private ToolStripMenuItem tsmiModificarTutorias;
         private ToolStripMenuItem tsmiVerAlumnos;
         private ToolStripMenuItem añadirAlumnoToolStripMenuItem;
         private ToolStripMenuItem modificarAlumnoToolStripMenuItem;
         private ToolStripMenuItem verProyectosToolStripMenuItem;
         private ToolStripMenuItem añadirProyectosToolStripMenuItem;
         private ToolStripMenuItem modificarProyectosToolStripMenuItem;
+        private ToolStripMenuItem añadirProfesorToolStripMenuItem;
+        private ToolStripMenuItem modificarProfesorToolStripMenuItem;
     }
 }

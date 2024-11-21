@@ -8,7 +8,6 @@ namespace MiniReto_interfaz_principal
 {
     public enum Genero { M, F, NB }
     public enum Familia { ADG, FME, IFC, TMA }
-
     public enum Tipo { Final, Intermodular }
 
 
