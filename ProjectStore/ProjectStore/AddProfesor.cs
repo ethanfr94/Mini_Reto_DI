@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiniReto_interfaz_principal
+namespace ProjectStore
 {
     public partial class AddProfesor : Form
     {

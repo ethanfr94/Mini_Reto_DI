@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniReto_interfaz_principal
+namespace ProjectStore
 {
     public enum Genero { M, F, NB }
     public enum Familia { ADG, FME, IFC, TMA }
