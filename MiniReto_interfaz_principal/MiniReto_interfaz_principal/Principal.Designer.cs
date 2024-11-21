@@ -171,7 +171,6 @@
             Name = "Principal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Perfil de Usuario";
-            Load += Principal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

@@ -7,10 +7,6 @@ namespace MiniReto_interfaz_principal
             InitializeComponent();
         }
 
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void tsmiVerCiclos_Click(object sender, EventArgs e)
         {
