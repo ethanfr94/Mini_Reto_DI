@@ -135,21 +135,21 @@
             // verProyectosToolStripMenuItem
             // 
             verProyectosToolStripMenuItem.Name = "verProyectosToolStripMenuItem";
-            verProyectosToolStripMenuItem.Size = new Size(180, 22);
+            verProyectosToolStripMenuItem.Size = new Size(175, 22);
             verProyectosToolStripMenuItem.Text = "Ver Proyectos";
             verProyectosToolStripMenuItem.Click += verProyectosToolStripMenuItem_Click;
             // 
             // añadirProyectosToolStripMenuItem
             // 
             añadirProyectosToolStripMenuItem.Name = "añadirProyectosToolStripMenuItem";
-            añadirProyectosToolStripMenuItem.Size = new Size(180, 22);
+            añadirProyectosToolStripMenuItem.Size = new Size(175, 22);
             añadirProyectosToolStripMenuItem.Text = "Añadir Proyecto";
             añadirProyectosToolStripMenuItem.Click += añadirProyectosToolStripMenuItem_Click;
             // 
             // modificarProyectosToolStripMenuItem
             // 
             modificarProyectosToolStripMenuItem.Name = "modificarProyectosToolStripMenuItem";
-            modificarProyectosToolStripMenuItem.Size = new Size(180, 22);
+            modificarProyectosToolStripMenuItem.Size = new Size(175, 22);
             modificarProyectosToolStripMenuItem.Text = "Modificar Proyecto";
             // 
             // tsmiLogOut
@@ -157,6 +157,7 @@
             tsmiLogOut.Name = "tsmiLogOut";
             tsmiLogOut.Size = new Size(88, 20);
             tsmiLogOut.Text = "Cerrar Sesion";
+            tsmiLogOut.Click += OnClickLogout;
             // 
             // ltvListaPrincipal
             // 
@@ -180,7 +181,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Principal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Perfil de Usuario";
+            Text = "ProjectStore | Perfil de Usuario";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

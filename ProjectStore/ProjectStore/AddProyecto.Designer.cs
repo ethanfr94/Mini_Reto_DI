@@ -58,15 +58,15 @@
             // 
             // txtComentarios
             // 
-            txtComentarios.Location = new Point(147, 244);
+            txtComentarios.Location = new Point(154, 244);
             txtComentarios.Name = "txtComentarios";
-            txtComentarios.Size = new Size(199, 23);
+            txtComentarios.Size = new Size(200, 23);
             txtComentarios.TabIndex = 80;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(12, 247);
+            label10.Location = new Point(18, 247);
             label10.Name = "label10";
             label10.Size = new Size(75, 15);
             label10.TabIndex = 79;
@@ -74,9 +74,9 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(259, 331);
+            btnCancelar.Location = new Point(264, 344);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(87, 23);
+            btnCancelar.Size = new Size(90, 23);
             btnCancelar.TabIndex = 78;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -84,9 +84,9 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(147, 331);
+            btnAdd.Location = new Point(154, 344);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(89, 23);
+            btnAdd.Size = new Size(90, 23);
             btnAdd.TabIndex = 77;
             btnAdd.Text = "Añadir";
             btnAdd.UseVisualStyleBackColor = true;
@@ -95,38 +95,38 @@
             // dtpFechaPres
             // 
             dtpFechaPres.Format = DateTimePickerFormat.Short;
-            dtpFechaPres.Location = new Point(147, 128);
+            dtpFechaPres.Location = new Point(154, 128);
             dtpFechaPres.Name = "dtpFechaPres";
-            dtpFechaPres.Size = new Size(199, 23);
+            dtpFechaPres.Size = new Size(200, 23);
             dtpFechaPres.TabIndex = 76;
             // 
             // txtLogo
             // 
-            txtLogo.Location = new Point(147, 157);
+            txtLogo.Location = new Point(154, 157);
             txtLogo.Name = "txtLogo";
-            txtLogo.Size = new Size(199, 23);
+            txtLogo.Size = new Size(200, 23);
             txtLogo.TabIndex = 74;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(147, 11);
+            txtNombre.Location = new Point(154, 12);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(199, 23);
+            txtNombre.Size = new Size(200, 23);
             txtNombre.TabIndex = 69;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(12, 134);
+            label8.Location = new Point(18, 134);
             label8.Name = "label8";
-            label8.Size = new Size(109, 15);
+            label8.Size = new Size(117, 15);
             label8.TabIndex = 68;
-            label8.Text = "Fecha Presentacion";
+            label8.Text = "Fecha Presentación *";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 189);
+            label7.Location = new Point(18, 189);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
             label7.TabIndex = 67;
@@ -135,7 +135,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 160);
+            label6.Location = new Point(18, 160);
             label6.Name = "label6";
             label6.Size = new Size(34, 15);
             label6.TabIndex = 66;
@@ -144,25 +144,25 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(11, 277);
+            label5.Location = new Point(18, 276);
             label5.Name = "label5";
-            label5.Size = new Size(39, 15);
+            label5.Size = new Size(42, 15);
             label5.TabIndex = 65;
-            label5.Text = "Ciclo*";
+            label5.Text = "Ciclo *";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(11, 102);
+            label4.Location = new Point(18, 101);
             label4.Name = "label4";
-            label4.Size = new Size(97, 15);
+            label4.Size = new Size(100, 15);
             label4.TabIndex = 64;
-            label4.Text = "Año Academico*";
+            label4.Text = "Año Académico *";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 73);
+            label3.Location = new Point(18, 73);
             label3.Name = "label3";
             label3.Size = new Size(56, 15);
             label3.TabIndex = 63;
@@ -171,58 +171,57 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(11, 14);
+            label1.Location = new Point(18, 15);
             label1.Name = "label1";
-            label1.Size = new Size(56, 15);
+            label1.Size = new Size(59, 15);
             label1.TabIndex = 61;
-            label1.Text = "Nombre*";
+            label1.Text = "Nombre *";
             // 
             // cmbTipo
             // 
             cmbTipo.FormattingEnabled = true;
-            cmbTipo.Location = new Point(147, 41);
+            cmbTipo.Location = new Point(154, 41);
             cmbTipo.Name = "cmbTipo";
-            cmbTipo.Size = new Size(199, 23);
+            cmbTipo.Size = new Size(200, 23);
             cmbTipo.TabIndex = 82;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 44);
+            label2.Location = new Point(18, 44);
             label2.Name = "label2";
-            label2.Size = new Size(35, 15);
+            label2.Size = new Size(38, 15);
             label2.TabIndex = 81;
-            label2.Text = "Tipo*";
+            label2.Text = "Tipo *";
             // 
             // txtMemoria
             // 
-            txtMemoria.Location = new Point(147, 186);
+            txtMemoria.Location = new Point(154, 186);
             txtMemoria.Name = "txtMemoria";
-            txtMemoria.Size = new Size(199, 23);
+            txtMemoria.Size = new Size(200, 23);
             txtMemoria.TabIndex = 83;
             // 
             // nudAnioAcademico
             // 
-            nudAnioAcademico.Location = new Point(147, 100);
+            nudAnioAcademico.Location = new Point(154, 99);
             nudAnioAcademico.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             nudAnioAcademico.Minimum = new decimal(new int[] { 2023, 0, 0, 0 });
             nudAnioAcademico.Name = "nudAnioAcademico";
-            nudAnioAcademico.Size = new Size(199, 23);
+            nudAnioAcademico.Size = new Size(200, 23);
             nudAnioAcademico.TabIndex = 84;
-            nudAnioAcademico.TextAlign = HorizontalAlignment.Right;
             nudAnioAcademico.Value = new decimal(new int[] { 2024, 0, 0, 0 });
             // 
             // txtArchivos
             // 
-            txtArchivos.Location = new Point(147, 215);
+            txtArchivos.Location = new Point(154, 215);
             txtArchivos.Name = "txtArchivos";
-            txtArchivos.Size = new Size(199, 23);
+            txtArchivos.Size = new Size(200, 23);
             txtArchivos.TabIndex = 86;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(12, 218);
+            label9.Location = new Point(18, 218);
             label9.Name = "label9";
             label9.Size = new Size(53, 15);
             label9.TabIndex = 85;
@@ -231,15 +230,15 @@
             // cmbCiclo
             // 
             cmbCiclo.FormattingEnabled = true;
-            cmbCiclo.Location = new Point(147, 274);
+            cmbCiclo.Location = new Point(154, 273);
             cmbCiclo.Name = "cmbCiclo";
-            cmbCiclo.Size = new Size(199, 23);
+            cmbCiclo.Size = new Size(200, 23);
             cmbCiclo.TabIndex = 87;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(12, 307);
+            label11.Location = new Point(18, 306);
             label11.Name = "label11";
             label11.Size = new Size(35, 15);
             label11.TabIndex = 88;
@@ -248,26 +247,26 @@
             // cmbTutor
             // 
             cmbTutor.FormattingEnabled = true;
-            cmbTutor.Location = new Point(147, 303);
+            cmbTutor.Location = new Point(154, 303);
             cmbTutor.Name = "cmbTutor";
-            cmbTutor.Size = new Size(199, 23);
+            cmbTutor.Size = new Size(200, 23);
             cmbTutor.TabIndex = 89;
             // 
             // txtResumen
             // 
-            txtResumen.Location = new Point(147, 70);
+            txtResumen.Location = new Point(154, 70);
             txtResumen.Name = "txtResumen";
-            txtResumen.Size = new Size(199, 23);
+            txtResumen.Size = new Size(200, 23);
             txtResumen.TabIndex = 90;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(12, 339);
+            label12.Location = new Point(18, 348);
             label12.Name = "label12";
-            label12.Size = new Size(120, 15);
+            label12.Size = new Size(118, 15);
             label12.TabIndex = 91;
-            label12.Text = "* Campos requeridod";
+            label12.Text = "* Campos requeridos";
             // 
             // AddProyecto
             // 
@@ -275,7 +274,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new Size(353, 363);
+            ClientSize = new Size(378, 383);
             Controls.Add(label12);
             Controls.Add(txtResumen);
             Controls.Add(cmbTutor);
@@ -302,9 +301,10 @@
             Controls.Add(label3);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "AddProyecto";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AddProyecto";
+            Text = "Añadir Proyecto";
             ((System.ComponentModel.ISupportInitialize)nudAnioAcademico).EndInit();
             ResumeLayout(false);
             PerformLayout();

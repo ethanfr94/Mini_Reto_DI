@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectStore.Entities;
 
 namespace ProjectStore
 {
@@ -15,9 +16,10 @@ namespace ProjectStore
         public AddProfesor()
         {
             InitializeComponent();
-            cargaComboGenero();
+            cargaComboGenero();    // Carga los géneros en el combo
         }
 
+        // Carga los géneros del enum al combo
         private void cargaComboGenero()
         {
             foreach (Genero genero in Enum.GetValues(typeof(Genero)))
@@ -26,30 +28,34 @@ namespace ProjectStore
             }
         }
 
+        // Guarda los datos del profesor y lo añade a la lista
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(txtNombre.Text == "" || txtApellidos.Text == "" || txtDni.Text == "" || txtEmail.Text == "" || txtContraseña.Text == "" || cmbGenero.Text == "")
+            if (new[] { txtNombre.Text, txtApellidos.Text, txtDni.Text, txtEmail.Text, txtContraseña.Text, cmbGenero.Text }.Any(c => string.IsNullOrWhiteSpace(c)))
             {
                 MessageBox.Show("Faltan campos por rellenar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                Profesor profesor = new Profesor();
-                profesor.Nombre = txtNombre.Text;
-                profesor.Apellidos = txtApellidos.Text;
-                profesor.Dni = txtDni.Text;
-                profesor.Email = txtEmail.Text;
-                profesor.Contraseña = txtContraseña.Text;
-                profesor.Telefono = txtTelefono.Text;
-                profesor.Genero = (Genero)cmbGenero.SelectedItem;
-                profesor.FechaNacimiento = dtpFechaNac.Value;
-                profesor.Especialidad = txtEspecialidad.Text;
-                profesor.Activo = true;
+                Profesor profesor = new Profesor
+                {
+                    Nombre = txtNombre.Text,
+                    Apellidos = txtApellidos.Text,
+                    Dni = txtDni.Text,
+                    Email = txtEmail.Text,
+                    Contraseña = txtContraseña.Text,
+                    Telefono = txtTelefono.Text,
+                    Genero = (Genero) cmbGenero.SelectedItem,
+                    FechaNacimiento = dtpFechaNac.Value,
+                    Especialidad = txtEspecialidad.Text,
+                    Activo = true
+                };
                 Principal.profesores.Add(profesor);
                 DialogResult = DialogResult.OK;
             }
         }
 
+        // Cierra el formulario sin guardar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

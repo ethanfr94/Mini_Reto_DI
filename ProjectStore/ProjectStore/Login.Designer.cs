@@ -130,6 +130,7 @@
             llbContact.TabIndex = 4;
             llbContact.TabStop = true;
             llbContact.Text = "soporte@projectstore.com";
+            llbContact.LinkClicked += OnClickLink;
             // 
             // Login
             // 

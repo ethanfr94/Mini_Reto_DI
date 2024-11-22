@@ -1,13 +1,17 @@
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using ProjectStore.Entities;
 
 namespace ProjectStore
 {
     public partial class Principal : Form
     {
+        // Listas estáticas que almacenan los objetos de alumnos, profesores, proyectos y ciclos
         public static List<Alumno> alumnos = new List<Alumno>();
         public static List<Profesor> profesores = new List<Profesor>();
         public static List<Proyecto> proyectos = new List<Proyecto>();
         public static List<Ciclo> ciclos = new List<Ciclo>();
+
+        // Variable para almacenar el correo del usuario que inició sesión
         private string email;
 
         public Principal(string email)
@@ -16,10 +20,12 @@ namespace ProjectStore
             this.email = email;
         }
 
+        // Evento para visualizar los ciclos
         private void tsmiVerCiclos_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
+
             ltvListaPrincipal.Columns.Add("Codigo", 35);
             ltvListaPrincipal.Columns.Add("Ciclo", 100);
             ltvListaPrincipal.Columns.Add("Etapa", 50);
@@ -29,12 +35,14 @@ namespace ProjectStore
             cargaCiclo();
         }
 
+        // Método para cargar los ciclos en el ListView
         public void cargaCiclo()
         {
             ltvListaPrincipal.Items.Clear();
             foreach (Ciclo ciclo in ciclos)
             {
                 ListViewItem item = new ListViewItem(ciclo.Codigo);
+
                 item.SubItems.Add(ciclo.Nombre);
                 item.SubItems.Add(ciclo.Etapa);
                 item.SubItems.Add(ciclo.Titulo);
@@ -44,10 +52,12 @@ namespace ProjectStore
             }
         }
 
+        // Evento para visualizar los profesores
         private void tsmiVerProfesores_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
+
             ltvListaPrincipal.Columns.Add("Id", 25);
             ltvListaPrincipal.Columns.Add("Nombre", 100);
             ltvListaPrincipal.Columns.Add("Apellidos", 100);
@@ -63,12 +73,14 @@ namespace ProjectStore
             cargaProfesores();
         }
 
+        // Método para cargar los profesores en el ListView
         public void cargaProfesores()
         {
             ltvListaPrincipal.Items.Clear();
             foreach (Profesor profesor in profesores)
             {
                 ListViewItem item = new ListViewItem(profesor.Id);
+
                 item.SubItems.Add(profesor.Nombre);
                 item.SubItems.Add(profesor.Apellidos);
                 item.SubItems.Add(profesor.Dni);
@@ -84,10 +96,12 @@ namespace ProjectStore
             }
         }
 
+        // Evento para visualizar los alumnos
         private void tsmiVerAlumnos_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
+
             ltvListaPrincipal.Columns.Add("Id", 25);
             ltvListaPrincipal.Columns.Add("Nombre", 100);
             ltvListaPrincipal.Columns.Add("Apellidos", 100);
@@ -102,6 +116,7 @@ namespace ProjectStore
             cargaAlumnos();
         }
 
+        // Método para cargar los alumnos en el ListView
         public void cargaAlumnos()
         {
             ltvListaPrincipal.Items.Clear();
@@ -121,10 +136,12 @@ namespace ProjectStore
             }
         }
 
+        // Evento para visualizar los proyectos
         private void verProyectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
+
             ltvListaPrincipal.Columns.Add("Id", 35);
             ltvListaPrincipal.Columns.Add("Nombre", 100);
             ltvListaPrincipal.Columns.Add("Tipo", 100);
@@ -140,6 +157,7 @@ namespace ProjectStore
             cargaProyectos();
         }
 
+        // Método para cargar los proyectos en el ListView
         public void cargaProyectos()
         {
             ltvListaPrincipal.Items.Clear();
@@ -157,10 +175,32 @@ namespace ProjectStore
                 item.SubItems.Add(proyecto.Comentarios);
                 item.SubItems.Add(proyecto.Ciclo.ToString());
                 item.SubItems.Add(proyecto.Tutor.ToString());
+
                 ltvListaPrincipal.Items.Add(item);
             }
         }
 
+        // Evento para cerrar sesión
+        private void OnClickLogout(object sender, EventArgs e)
+        {
+            email = string.Empty;
+
+            // Abre el formulario principal en un hilo separado para evitar bloquear la UI
+            Thread thread = new Thread(() =>
+            {
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.EnableVisualStyles();
+
+                Login login = new Login();
+                Application.Run(login);
+            });
+
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            this.Close();
+        }
+
+        // Método para actualizar los objetos de alumnos, profesores, proyectos y ciclos
         //public static void refresh()
         //{
         //    Principal principal = new Principal();
@@ -170,11 +210,11 @@ namespace ProjectStore
         //    principal.cargaCiclo();
         //}
 
+        // Métodos para abrir formularios de adición de alumnos, profesores y proyectos
         private void añadirAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddAlumno addAlumno = new AddAlumno();
             addAlumno.ShowDialog();
-
         }
 
         private void añadirProfesorToolStripMenuItem_Click(object sender, EventArgs e)
