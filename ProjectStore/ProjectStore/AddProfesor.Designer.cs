@@ -1,4 +1,4 @@
-﻿namespace MiniReto_interfaz_principal
+﻿namespace ProjectStore
 {
     partial class AddProfesor
     {

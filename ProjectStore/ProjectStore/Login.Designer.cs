@@ -64,7 +64,7 @@
             btnLogin.Location = new Point(192, 165);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(90, 23);
-            btnLogin.TabIndex = 2;
+            btnLogin.TabIndex = 3;
             btnLogin.Text = "Iniciar Sesión";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += OnClickLogin;
@@ -92,14 +92,14 @@
             txtEmail.Location = new Point(102, 97);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(180, 23);
-            txtEmail.TabIndex = 5;
+            txtEmail.TabIndex = 1;
             // 
             // txtPassword
             // 
             txtPassword.Location = new Point(102, 131);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(180, 23);
-            txtPassword.TabIndex = 6;
+            txtPassword.TabIndex = 2;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // lblHelpDescription
@@ -127,7 +127,7 @@
             llbContact.Location = new Point(26, 255);
             llbContact.Name = "llbContact";
             llbContact.Size = new Size(148, 15);
-            llbContact.TabIndex = 9;
+            llbContact.TabIndex = 4;
             llbContact.TabStop = true;
             llbContact.Text = "soporte@projectstore.com";
             // 

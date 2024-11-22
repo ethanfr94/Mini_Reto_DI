@@ -14,8 +14,8 @@ D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\De
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.pdb
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.genruntimeconfig.cache
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ref\ProjectStore.dll
-D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\MiniReto_interfaz_principal.AddAlumno.resources
-D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\MiniReto_interfaz_principal.AddProfesor.resources
-D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\MiniReto_interfaz_principal.AddProyecto.resources
-D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\MiniReto_interfaz_principal.Principal.resources
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\minireto.Proyectoindividual.resources
+D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.AddAlumno.resources
+D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.AddProfesor.resources
+D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.AddProyecto.resources
+D:\Usuarios\dam2\Desktop\Mini_Reto_DI-mainnnnnn\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.Principal.resources

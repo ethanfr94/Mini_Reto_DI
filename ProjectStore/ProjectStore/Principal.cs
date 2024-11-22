@@ -1,4 +1,6 @@
-namespace MiniReto_interfaz_principal
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
+namespace ProjectStore
 {
     public partial class Principal : Form
     {
@@ -6,12 +8,13 @@ namespace MiniReto_interfaz_principal
         public static List<Profesor> profesores = new List<Profesor>();
         public static List<Proyecto> proyectos = new List<Proyecto>();
         public static List<Ciclo> ciclos = new List<Ciclo>();
+        private string email;
 
-        public Principal()
+        public Principal(string email)
         {
             InitializeComponent();
+            this.email = email;
         }
-
 
         private void tsmiVerCiclos_Click(object sender, EventArgs e)
         {
@@ -158,14 +161,14 @@ namespace MiniReto_interfaz_principal
             }
         }
 
-        public static void refresh()
-        {
-            Principal principal = new Principal();
-            principal.cargaAlumnos();
-            principal.cargaProfesores();
-            principal.cargaProyectos();
-            principal.cargaCiclo();
-        }
+        //public static void refresh()
+        //{
+        //    Principal principal = new Principal();
+        //    principal.cargaAlumnos();
+        //    principal.cargaProfesores();
+        //    principal.cargaProyectos();
+        //    principal.cargaCiclo();
+        //}
 
         private void añadirAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
