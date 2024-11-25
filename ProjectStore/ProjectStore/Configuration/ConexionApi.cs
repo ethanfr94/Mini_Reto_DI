@@ -1,5 +1,4 @@
-﻿
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,14 +64,14 @@ namespace ProjectStore
             }
         */
 
-        public async Task<List<Profesor>> ProfesorporCorreo(String correo)
+        public async Task<List<Profesor>> ProfesorporCorreo(String correo, String password)
         {
             try
             {
                 // Cambiar por  ip de  equipo
 
                 // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/obtenerProfesoresCorreo{correo}");
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/profesores/email/{correo}");
                 response.EnsureSuccessStatusCode();
                 string responseJson = await response.Content.ReadAsStringAsync();
                 List<Profesor> profesor = JsonConvert.DeserializeObject<List<Profesor>>(responseJson);
@@ -89,11 +88,11 @@ namespace ProjectStore
             try
             {
                 // Formar la URL con el ID de la incidencia
-                string url = $"http://localhost:4000/obtenerProfesores";
+                string url = "http://localhost:4000/profesores";
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseJson = await response.Content.ReadAsStringAsync();
-                List<Profesor> profesores = JsonConvert.DeserializeObject < List<Profesor>>(responseJson);
+                List<Profesor> profesores = JsonConvert.DeserializeObject<List<Profesor>>(responseJson);
                 return profesores;
             }
             catch (Exception)
@@ -101,14 +100,48 @@ namespace ProjectStore
                 return null;
             }
         }
-        public async Task<List<Proyecto>> Proyectos()
+        public async Task<Profesor> ObtenerProfesorIndividual(int id)
+        {
+            try
+            {
+                // Formar la URL con el ID de la incidencia
+                string url = $"http://localhost:4000/profesores/{id}";
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseJson = await response.Content.ReadAsStringAsync();
+                Profesor profesor = JsonConvert.DeserializeObject<Profesor>(responseJson);
+                return profesor;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public async Task<Proyecto> ObtenerProyectoIndividual(int id)
+        {
+            try
+            {
+                // Formar la URL con el ID de la incidencia
+                string url = $"http://localhost:4000/proyectos/idproyecto/{id}";
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseJson = await response.Content.ReadAsStringAsync();
+                Proyecto proyecto = JsonConvert.DeserializeObject<Proyecto>(responseJson);
+                return proyecto;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public async Task<List<Proyecto>> ObtenerProyectos()
         {
             try
             {
                 // Cambiar por  ip de  equipo
 
                 // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/obtenerProyectos");
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/proyectos");
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
@@ -122,20 +155,20 @@ namespace ProjectStore
                 return null;
             }
         }
-        public async Task<List<Proyecto>> Proyectosid(int id)
+        public async Task<Alumno> ObtenerAlumnoindividual(int id)
         {
             try
             {
                 // Cambiar por  ip de  equipo
 
                 // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/obtenerProyectos{id}");
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/alumnos/{id}");
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
 
-                List<Proyecto> proyectos = JsonConvert.DeserializeObject<List<Proyecto>>(responseJson);
-                return proyectos;
+                Alumno alumno = JsonConvert.DeserializeObject<Alumno>(responseJson);
+                return alumno;
             }
             catch (Exception ex)
             {
@@ -143,6 +176,69 @@ namespace ProjectStore
                 return null;
             }
         }
+        public async Task<List<Alumno>> ObtenerAlumnos()
+        {
+            try
+            {
+                // Cambiar por  ip de  equipo
+
+                // ip 10.0.22.11
+                HttpResponseMessage response = await client.GetAsync("http://localhost:4000/alumnos");
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                List<Alumno> alumnos = JsonConvert.DeserializeObject<List<Alumno>>(responseJson);
+                return alumnos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        public async Task<Ciclo> ObtenerCiclosindividual(int id)
+        {
+            try
+            {
+                // Cambiar por  ip de  equipo
+
+                // ip 10.0.22.11
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/ciclos/codciclos/{id}");
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                Ciclo ciclo = JsonConvert.DeserializeObject<Ciclo>(responseJson);
+                return ciclo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        public async Task<List<Ciclo>> ObtenerCiclos()
+        {
+            try
+            {
+                // Cambiar por  ip de  equipo
+                // ip 10.0.22.11
+                HttpResponseMessage response = await client.GetAsync("http://localhost:4000/ciclos");
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                List<Ciclo> ciclos = JsonConvert.DeserializeObject<List<Ciclo>>(responseJson);
+                return ciclos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
         public async Task<bool> ActualizarProyecto(int id, Proyecto proyecto)
         {
             try
