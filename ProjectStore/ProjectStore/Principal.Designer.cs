@@ -67,7 +67,7 @@
             // tsmiVerCiclos
             // 
             tsmiVerCiclos.Name = "tsmiVerCiclos";
-            tsmiVerCiclos.Size = new Size(125, 22);
+            tsmiVerCiclos.Size = new Size(180, 22);
             tsmiVerCiclos.Text = "Ver Ciclos";
             tsmiVerCiclos.Click += tsmiVerCiclos_Click;
             // 
@@ -127,6 +127,7 @@
             modificarAlumnoToolStripMenuItem.Name = "modificarAlumnoToolStripMenuItem";
             modificarAlumnoToolStripMenuItem.Size = new Size(180, 22);
             modificarAlumnoToolStripMenuItem.Text = "Modificar Alumno";
+            modificarAlumnoToolStripMenuItem.Click += modificarAlumnoToolStripMenuItem_Click;
             // 
             // tsmiProyectos
             // 
@@ -155,6 +156,7 @@
             modificarProyectosToolStripMenuItem.Name = "modificarProyectosToolStripMenuItem";
             modificarProyectosToolStripMenuItem.Size = new Size(180, 22);
             modificarProyectosToolStripMenuItem.Text = "Modificar Proyecto";
+            modificarProyectosToolStripMenuItem.Click += modificarProyectosToolStripMenuItem_Click;
             // 
             // tsmiLogOut
             // 
@@ -202,7 +204,6 @@
         private ToolStripMenuItem tsmiAlumnos;
         private ToolStripMenuItem tsmiProyectos;
         private ToolStripMenuItem tsmiLogOut;
-        private static ListView ltvListaPrincipal;
         private ToolStripMenuItem tsmiVerCiclos;
         private ToolStripMenuItem tsmiVerProfesores;
         private ToolStripMenuItem tsmiVerAlumnos;
@@ -213,5 +214,6 @@
         private ToolStripMenuItem modificarProyectosToolStripMenuItem;
         private ToolStripMenuItem añadirProfesorToolStripMenuItem;
         private ToolStripMenuItem modificarProfesorToolStripMenuItem;
+        private ListView ltvListaPrincipal;
     }
 }

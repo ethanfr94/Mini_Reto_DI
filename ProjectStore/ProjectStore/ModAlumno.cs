@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectStore.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,23 +11,23 @@ using System.Windows.Forms;
 
 namespace ProjectStore
 {
-    public partial class ModProfesor : Form
+    public partial class ModAlumno : Form
     {
-        Profesor profesor;
-        public ModProfesor(Profesor p)
+        Alumno alumno;
+        public ModAlumno(Alumno a)
         {
             InitializeComponent();
-            profesor = p;
-            txtNombre.Text = p.Nombre;
-            txtApellidos.Text = p.Apellidos;
-            txtDni.Text = p.Dni;
-            txtEmail.Text = p.Email;
-            txtContraseña.Text = p.Contraseña;
-            txtTelefono.Text = p.Telefono;
-            cmbGenero.Text = p.Genero.ToString();
-            dtpFechaNac.Value = p.FechaNacimiento;
-            txtEspecialidad.Text = p.Especialidad;
-            chkActivo.Checked = p.Activo;
+            alumno = a;
+            txtNombre.Text = a.Nombre;
+            txtApellidos.Text = a.Apellidos;
+            txtDni.Text = a.Dni;
+            txtEmail.Text = a.Email;
+            txtContraseña.Text = a.Contraseña;
+            txtTelefono.Text = a.Telefono;
+            cmbGenero.Text = a.Genero.ToString();
+            dtpFechaNac.Value = a.FechaNacimiento;
+            cmbCiclo.Text = a.Ciclo.Nombre;
+            chkActivo.Checked = a.Activo;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -45,29 +46,30 @@ namespace ProjectStore
                 }
                 else
                 {
-                    if (profesor.Email != txtEmail.Text)
+                    if (alumno.Email != txtEmail.Text)
                     {
-                        profesor.Email = txtEmail.Text;
+                        alumno.Email = txtEmail.Text;
                         //funcion update email
                     }
-                    if (profesor.Contraseña != txtContraseña.Text)
+                    if (alumno.Contraseña != txtContraseña.Text)
                     {
-                        profesor.Contraseña = txtContraseña.Text;
+                        alumno.Contraseña = txtContraseña.Text;
                         //funcion update contraseña
                     }
-                    if (profesor.Telefono != txtTelefono.Text)
+                    if (alumno.Telefono != txtTelefono.Text)
                     {
-                        profesor.Telefono = txtTelefono.Text;
+                        alumno.Telefono = txtTelefono.Text;
                         //funcion update telefono
                     }
-                    if (profesor.Activo != chkActivo.Checked)
+                    if (alumno.Activo != chkActivo.Checked)
                     {
-                        profesor.Activo = chkActivo.Checked;
+                        alumno.Activo = chkActivo.Checked;
                         //funcion update activo
                     }
                 }
                 DialogResult = DialogResult.OK;
             }
         }
+    }
     }
 }

@@ -33,6 +33,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Titulo", 100);
             ltvListaPrincipal.Columns.Add("Curriculo", 100);
             ltvListaPrincipal.Columns.Add("Familia", 100);
+
             //ciclos = funcion de la api que devuelve los ciclos;
             cargaCiclo();
         }
@@ -77,7 +78,7 @@ namespace ProjectStore
         }
 
         // Método para cargar los profesores en el ListView
-        public static void cargaProfesores()
+        public void cargaProfesores()
         {
             ltvListaPrincipal.Items.Clear();
             foreach (Profesor profesor in profesores)
@@ -236,18 +237,54 @@ namespace ProjectStore
 
         private void modificarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Profesor profesor in profesores)
+            Profesor profesor;
+            foreach (Profesor p in profesores)
             {
-                if (profesor.Id == ltvListaPrincipal.SelectedItems[0].SubItems[0].Text)
+                if (p.Id == ltvListaPrincipal.SelectedItems[0].SubItems[0].Text)
                 {
-                    ModProfesor modProf = new ModProfesor(profesor);
+                    profesor = p;
+                    ModProfesor modProf = new ModProfesor(p);
                     modProf.ShowDialog();
                 }
             }
             if (DialogResult == DialogResult.OK)
             {
+               
                 //profesores = funcion de la api que devuelve los profesores;
                 cargaProfesores();
+            }
+        }
+
+        private void modificarAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Alumno al in alumnos)
+            {
+                if (al.Id == ltvListaPrincipal.SelectedItems[0].SubItems[0].Text)
+                {
+                    ModAlumno modAlumno = new ModAlumno(al);
+                    modAlumno.ShowDialog();
+                }
+            }
+            if (DialogResult == DialogResult.OK)
+            {
+                //alumnos = funcion de la api que devuelve los alumnos;
+                cargaAlumnos();
+            }
+        }
+        private void modificarProyectosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Proyecto p in proyectos)
+            {
+                if (p.Id == ltvListaPrincipal.SelectedItems[0].SubItems[0].Text)
+                {
+                    ModProyecto modProyecto = new ModProyecto(p);
+                    modProyecto.ShowDialog();
+                }
+            }
+            if (DialogResult == DialogResult.OK)
+            {
+                //proyectos = funcion de la api que devuelve los proyectos;
+                cargaProyectos();
             }
         }
 
@@ -260,7 +297,9 @@ namespace ProjectStore
                 modificarProfesorToolStripMenuItem.Enabled = true;
                 modificarProyectosToolStripMenuItem.Enabled = true;
             }
-            
+
         }
+
+        
     }
 }

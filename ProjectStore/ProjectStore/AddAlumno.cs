@@ -55,23 +55,35 @@ namespace ProjectStore
             else
             {
                 string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                string patron = @"^\d{8}[A-Za-z]$";
                 Alumno a = new Alumno();
 
                 a.Nombre = txtNombre.Text;
                 a.Apellidos = txtApellidos.Text;
-                a.Dni = txtDni.Text;
-                if(Regex.IsMatch(txtEmail.Text, emailPattern)) a.Email = txtEmail.Text;
+                if (Regex.IsMatch(txtDni.Text, patron)) a.Dni = txtDni.Text;
+                else
+                {
+                    MessageBox.Show("Formato de DNI no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (Regex.IsMatch(txtEmail.Text, emailPattern)) a.Email = txtEmail.Text;
                 else{
                     MessageBox.Show("Formato de Email no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 a.Contraseña = txtContraseña.Text;
-                a.Telefono = txtTelefono.Text;
+                if(txtTelefono.Text.Length == 9) a.Telefono = txtTelefono.Text;
+                else
+                {
+                    MessageBox.Show("Formato de Teléfono no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 a.Genero = (Genero)cmbGenero.SelectedItem;
                 a.FechaNacimiento = dtpFechaNac.Value;
                 a.Activo = true;
                 a.Ciclo = Principal.ciclos[cmbCiclo.SelectedIndex];
                 
+                //funcion insert alumno
                 Principal.alumnos.Add(a);
                 DialogResult = DialogResult.OK;
             }

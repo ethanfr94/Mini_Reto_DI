@@ -63,21 +63,22 @@ namespace ProjectStore
             }
             else
             {
-                Proyecto proyecto = new Proyecto
-                {
-                    Nombre = txtNombre.Text,
-                    Tipo = (Tipo)cmbTipo.SelectedIndex,
-                    Resumen = txtResumen.Text,
-                    Anio_academico = (int)nudAnioAcademico.Value,
-                    Fecha_presentacion = dtpFechaPres.Value,
-                    Logo = txtLogo.Text,
-                    Memoria = txtMemoria.Text,
-                    Archivos = txtArchivos.Text,
-                    Comentarios = txtComentarios.Text,
-                    Ciclo = Principal.ciclos[cmbCiclo.SelectedIndex],
-                    Tutor = Principal.profesores[cmbTutor.SelectedIndex]
-                };
-                Principal.proyectos.Add(proyecto);
+                Proyecto p = new Proyecto();                
+                    p.Nombre = txtNombre.Text;
+                    p.Tipo = (Tipo)cmbTipo.SelectedIndex;
+                    p.Resumen = txtResumen.Text;
+                    p.Anio_academico = (int)nudAnioAcademico.Value;
+                    p.Fecha_presentacion = dtpFechaPres.Value;
+                    p.Logo = txtLogo.Text;
+                    p.Memoria = txtMemoria.Text;
+                    p.Archivos = txtArchivos.Text;
+                    p.Comentarios = txtComentarios.Text;
+                    p.Ciclo = Principal.ciclos[cmbCiclo.SelectedIndex];
+                    p.Tutor = Principal.profesores[cmbTutor.SelectedIndex];
+                
+
+                //funcion insert proyecto
+                Principal.proyectos.Add(p);
                 DialogResult = DialogResult.OK;
             }
         }

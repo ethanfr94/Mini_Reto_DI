@@ -39,23 +39,35 @@ namespace ProjectStore
             else
             {
                 string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                string patron = @"^\d{8}[A-Za-z]$";
                 Profesor p = new Profesor();
 
                 p.Nombre = txtNombre.Text;
                 p.Apellidos = txtApellidos.Text;
-                p.Dni = txtDni.Text;
+                if(Regex.IsMatch(txtDni.Text, patron)) p.Dni = txtDni.Text;
+                else
+                {
+                    MessageBox.Show("Formato de DNI no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if(Regex.IsMatch(txtEmail.Text, emailPattern)) p.Email = txtEmail.Text; 
                 else{
                     MessageBox.Show("Formato de Email no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 p.Contraseña = txtContraseña.Text;
-                p.Telefono = txtTelefono.Text;
+                if (txtTelefono.Text.Length == 9) p.Telefono = txtTelefono.Text;
+                else
+                {
+                    MessageBox.Show("Formato de Teléfono no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 p.Genero = (Genero)cmbGenero.SelectedItem;
                 p.FechaNacimiento = dtpFechaNac.Value;
                 p.Especialidad = txtEspecialidad.Text;
                 p.Activo = true;
                 
+                //funcion insert profesor
                 Principal.profesores.Add(p);
                 DialogResult = DialogResult.OK;
             }
