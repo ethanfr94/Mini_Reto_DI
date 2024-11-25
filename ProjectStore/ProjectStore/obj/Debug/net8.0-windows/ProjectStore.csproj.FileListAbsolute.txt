@@ -69,3 +69,4 @@ D:\Usuarios\dam2\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.genruntimeconfig.cache
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ref\ProjectStore.dll
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.ModProfesor.resources
+D:\Usuarios\dam2\Desktop\Mini_Reto_DI-main\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.ModProfesor.resources

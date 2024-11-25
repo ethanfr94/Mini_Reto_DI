@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-using ProjectStore.Entities;
+using System.Windows.Forms;
 
 namespace ProjectStore
 {
@@ -15,67 +11,83 @@ namespace ProjectStore
             InitializeComponent();
         }
 
-        private void OnClickLogin(object sender, EventArgs e)
+        // Evento que se dispara al hacer clic en el botón de iniciar sesión
+        private async void OnClickLogin(object sender, EventArgs e)
         {
-            // Obtiene el email y contraseña del campo de texto
+            // Obtiene los datos de correo y la contraseña ingresados
             string email = txtEmail.Text;
             string password = txtPassword.Text;
 
-            // Expresión regular para validar el formato del correo
+            // Patrón para validar un correo electrónico con expresión regular
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
-            // Verifica si algún campo está vacío
+            // Validar que los campos no estén vacíos
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Hay campos sin rellenar.\nPor favor, complete todos los campos.",
                                 "Campos Incompletos",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-
-                txtPassword.Text = String.Empty;
                 return;
             }
-            // Verifica si el correo tiene un formato válido
-            else if (!Regex.IsMatch(email, emailPattern))
+
+            // Validar el formato del correo electrónico
+            if (!Regex.IsMatch(email, emailPattern))
             {
                 MessageBox.Show("El formato del correo electrónico es incorrecto.\nPor favor, ingrese un correo válido.",
                                 "Formato Incorrecto",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-
-                txtPassword.Text = String.Empty;
                 return;
             }
 
-            // Aquí se realizaría la verificación de credenciales, por ejemplo, con una API o base de datos
-            txtEmail.Text = String.Empty;
-            txtPassword.Text = String.Empty;
+            // Realizar la consulta a la API de forma asíncrona
+            var profesor = await new ConexionApi().ProfesorporCorreoPassword(email, password);
 
-            // Abre el formulario principal en un hilo separado para evitar bloquear la UI
-            Thread thread = new Thread(() =>
+            if (profesor == null)
             {
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.EnableVisualStyles();
+                // Mostrar un mensaje si las credenciales son incorrectas
+                MessageBox.Show("Las credenciales no son válidas.\nPor favor, revise su correo o contraseña.",
+                                "Credenciales Incorrectas",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
 
-                Principal principal = new Principal(email);
-                Application.Run(principal);
-            });
+                // Limpiar los campos de entrada para un nuevo intento
+                txtPassword.Clear();
+            }
+            else
+            {
+                // Abre el formulario principal en un hilo separado para evitar bloquear la UI
+                Thread thread = new Thread(() =>
+                {
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.EnableVisualStyles();
 
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
-            this.Close();
+                    Principal principal = new Principal(email);
+                    Application.Run(principal);
+                });
+
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
+                this.Close();
+            }
         }
 
+        // Evento que se dispara al hacer clic en el enlace de contacto
         private void OnClickLink(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Abre la aplicación de correo predeterminada
             try
             {
+                // Abrir el cliente de correo predeterminado con la dirección del enlace
                 System.Diagnostics.Process.Start("mailto:" + llbContact.Text);
             }
-            catch (System.ComponentModel.Win32Exception ex)
+            catch (System.ComponentModel.Win32Exception)
             {
-                MessageBox.Show("No se pudo abrir el cliente de correo. Asegúrese de tener un cliente de correo predeterminado configurado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Mostrar un mensaje si no se puede abrir el cliente de correo
+                MessageBox.Show("No se pudo abrir el cliente de correo. Asegúrese de tener un cliente de correo predeterminado configurado.",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }

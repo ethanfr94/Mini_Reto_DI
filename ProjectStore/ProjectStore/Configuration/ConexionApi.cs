@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 
@@ -18,6 +19,29 @@ namespace ProjectStore
         {
             client = new HttpClient();
         }
+
+        public async Task<Profesor> ProfesorporCorreoPassword(string correo, string password)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                string encodedCorreo = System.Web.HttpUtility.UrlEncode(correo);
+                string encodedPassword = System.Web.HttpUtility.UrlEncode(password);
+                string url = $"http://localhost:4000/profesores/email/{encodedCorreo}?contraseña={encodedPassword}";
+
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Profesor>(responseJson);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
 
         /*    public async Task<List<Incidencias>> GetIncidencias()
             {
