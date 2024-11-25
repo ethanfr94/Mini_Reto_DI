@@ -44,7 +44,11 @@ namespace ProjectStore
                 p.Nombre = txtNombre.Text;
                 p.Apellidos = txtApellidos.Text;
                 p.Dni = txtDni.Text;
-                if(Regex.IsMatch(txtEmail.Text, emailPattern)) p.Email = txtEmail.Text;                
+                if(Regex.IsMatch(txtEmail.Text, emailPattern)) p.Email = txtEmail.Text; 
+                else{
+                    MessageBox.Show("Formato de Email no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 p.Contraseña = txtContraseña.Text;
                 p.Telefono = txtTelefono.Text;
                 p.Genero = (Genero)cmbGenero.SelectedItem;

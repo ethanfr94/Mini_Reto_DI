@@ -6,10 +6,10 @@ namespace ProjectStore
     public partial class Principal : Form
     {
         // Listas estáticas que almacenan los objetos de alumnos, profesores, proyectos y ciclos
-        public static List<Alumno> alumnos = new List<Alumno>();
-        public static List<Profesor> profesores = new List<Profesor>();
-        public static List<Proyecto> proyectos = new List<Proyecto>();
-        public static List<Ciclo> ciclos = new List<Ciclo>();
+        public static List<Alumno> alumnos;
+        public static List<Profesor> profesores;
+        public static List<Proyecto> proyectos;
+        public static List<Ciclo> ciclos;
 
         // Variable para almacenar el correo del usuario que inició sesión
         private string email = null;
@@ -17,10 +17,8 @@ namespace ProjectStore
         public Principal(string email)
         {
             InitializeComponent();
+
             this.email = email;
-            modificarAlumnoToolStripMenuItem.Enabled = false;
-            modificarProfesorToolStripMenuItem.Enabled = false;
-            modificarProyectosToolStripMenuItem.Enabled = false;
         }
 
         // Evento para visualizar los ciclos
@@ -35,6 +33,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Titulo", 100);
             ltvListaPrincipal.Columns.Add("Curriculo", 100);
             ltvListaPrincipal.Columns.Add("Familia", 100);
+            //ciclos = funcion de la api que devuelve los ciclos;
             cargaCiclo();
         }
 
@@ -73,11 +72,12 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Especialidad", 100);
             ltvListaPrincipal.Columns.Add("Activo", 25);
             ltvListaPrincipal.Columns.Add("Admin", 25);
+            //profesores = funcion de la api que devuelve los profesores;
             cargaProfesores();
         }
 
         // Método para cargar los profesores en el ListView
-        public void cargaProfesores()
+        public static void cargaProfesores()
         {
             ltvListaPrincipal.Items.Clear();
             foreach (Profesor profesor in profesores)
@@ -116,6 +116,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Fecha de Nacimiento", 100);
             ltvListaPrincipal.Columns.Add("Activo", 25);
             ltvListaPrincipal.Columns.Add("Admin", 25);
+            //alumnos = funcion de la api que devuelve los alumnos;
             cargaAlumnos();
         }
 
@@ -157,6 +158,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Comentarios", 100);
             ltvListaPrincipal.Columns.Add("Ciclo", 35);
             ltvListaPrincipal.Columns.Add("Tutor", 35);
+            //proyectos = funcion de la api que devuelve los proyectos;
             cargaProyectos();
         }
 
@@ -234,19 +236,31 @@ namespace ProjectStore
 
         private void modificarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModProfesor modProfesor = new ModProfesor();
-            modProfesor.ShowDialog();
+            foreach (Profesor profesor in profesores)
+            {
+                if (profesor.Id == ltvListaPrincipal.SelectedItems[0].SubItems[0].Text)
+                {
+                    ModProfesor modProf = new ModProfesor(profesor);
+                    modProf.ShowDialog();
+                }
+            }
+            if (DialogResult == DialogResult.OK)
+            {
+                //profesores = funcion de la api que devuelve los profesores;
+                cargaProfesores();
+            }
         }
 
         // evento que habilita los botones de modificacion al seleccionar un elemento de la lista
         private void ltvListaPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ltvListaPrincipal.SelectedItems.Count > 0)
-                {
-                    modificarAlumnoToolStripMenuItem.Enabled = true;
-                    modificarProfesorToolStripMenuItem.Enabled = true;
-                    modificarProyectosToolStripMenuItem.Enabled = true;
-                }
+            {
+                modificarAlumnoToolStripMenuItem.Enabled = true;
+                modificarProfesorToolStripMenuItem.Enabled = true;
+                modificarProyectosToolStripMenuItem.Enabled = true;
+            }
+            
         }
     }
 }

@@ -62,6 +62,7 @@
             // 
             // txtEspecialidad
             // 
+            txtEspecialidad.Enabled = false;
             txtEspecialidad.Location = new Point(147, 242);
             txtEspecialidad.Name = "txtEspecialidad";
             txtEspecialidad.Size = new Size(199, 23);

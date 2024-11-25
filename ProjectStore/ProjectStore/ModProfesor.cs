@@ -13,10 +13,19 @@ namespace ProjectStore
     public partial class ModProfesor : Form
     {
         Profesor profesor;
-        public ModProfesor()
+        public ModProfesor(Profesor p)
         {
             InitializeComponent();
-            
+            profesor = p;
+            txtNombre.Text = p.Nombre;
+            txtApellidos.Text = p.Apellidos;
+            txtDni.Text = p.Dni;
+            txtEmail.Text = p.Email;
+            txtContraseña.Text = p.Contraseña;
+            txtTelefono.Text = p.Telefono;
+            cmbGenero.Text = p.Genero.ToString();
+            dtpFechaNac.Value = p.FechaNacimiento;
+            txtEspecialidad.Text = p.Especialidad;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -33,10 +42,25 @@ namespace ProjectStore
             }
             else
             {
-                
+                if(profesor.Email != txtEmail.Text)
+                {
+                    profesor.Email = txtEmail.Text;
+                    //funcion update email
+                }
+                if(profesor.Contraseña != txtContraseña.Text)
+                {
+                    profesor.Contraseña = txtContraseña.Text;
+                    //funcion update contraseña
+                }
+                if (profesor.Telefono != txtTelefono.Text)
+                {
+                    profesor.Telefono = txtTelefono.Text;
+                    //funcion update telefono
+                }           
 
             }
-            DialogResult = DialogResult.OK;
+            //Principal.profesores = funcion que devuelva todos los profesores
+            Principal.cargaProfesores();
         }
     }
 }

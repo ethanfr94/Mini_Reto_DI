@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjectStore.Entities;
@@ -53,20 +54,25 @@ namespace ProjectStore
             }
             else
             {
-                Alumno alumno = new Alumno
-                {
-                    Nombre = txtNombre.Text,
-                    Apellidos = txtApellidos.Text,
-                    Dni = txtDni.Text,
-                    Email = txtEmail.Text,
-                    Contraseña = txtContraseña.Text,
-                    Telefono = txtTelefono.Text,
-                    Genero = (Genero) cmbGenero.SelectedItem,
-                    FechaNacimiento = dtpFechaNac.Value,
-                    Activo = true,
-                    Ciclo = Principal.ciclos[cmbCiclo.SelectedIndex]
-                };
-                Principal.alumnos.Add(alumno);
+                string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                Alumno a = new Alumno();
+
+                a.Nombre = txtNombre.Text;
+                a.Apellidos = txtApellidos.Text;
+                a.Dni = txtDni.Text;
+                if(Regex.IsMatch(txtEmail.Text, emailPattern)) a.Email = txtEmail.Text;
+                else{
+                    MessageBox.Show("Formato de Email no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                a.Contraseña = txtContraseña.Text;
+                a.Telefono = txtTelefono.Text;
+                a.Genero = (Genero)cmbGenero.SelectedItem;
+                a.FechaNacimiento = dtpFechaNac.Value;
+                a.Activo = true;
+                a.Ciclo = Principal.ciclos[cmbCiclo.SelectedIndex];
+                
+                Principal.alumnos.Add(a);
                 DialogResult = DialogResult.OK;
             }
         }

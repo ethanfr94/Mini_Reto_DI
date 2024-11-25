@@ -81,21 +81,22 @@
             // tsmiVerProfesores
             // 
             tsmiVerProfesores.Name = "tsmiVerProfesores";
-            tsmiVerProfesores.Size = new Size(172, 22);
+            tsmiVerProfesores.Size = new Size(180, 22);
             tsmiVerProfesores.Text = "Ver Profesores";
             tsmiVerProfesores.Click += tsmiVerProfesores_Click;
             // 
             // añadirProfesorToolStripMenuItem
             // 
             añadirProfesorToolStripMenuItem.Name = "añadirProfesorToolStripMenuItem";
-            añadirProfesorToolStripMenuItem.Size = new Size(172, 22);
+            añadirProfesorToolStripMenuItem.Size = new Size(180, 22);
             añadirProfesorToolStripMenuItem.Text = "Añadir Profesor";
             añadirProfesorToolStripMenuItem.Click += añadirProfesorToolStripMenuItem_Click;
             // 
             // modificarProfesorToolStripMenuItem
             // 
+            modificarProfesorToolStripMenuItem.Enabled = false;
             modificarProfesorToolStripMenuItem.Name = "modificarProfesorToolStripMenuItem";
-            modificarProfesorToolStripMenuItem.Size = new Size(172, 22);
+            modificarProfesorToolStripMenuItem.Size = new Size(180, 22);
             modificarProfesorToolStripMenuItem.Text = "Modificar Profesor";
             modificarProfesorToolStripMenuItem.Click += modificarProfesorToolStripMenuItem_Click;
             // 
@@ -109,21 +110,22 @@
             // tsmiVerAlumnos
             // 
             tsmiVerAlumnos.Name = "tsmiVerAlumnos";
-            tsmiVerAlumnos.Size = new Size(171, 22);
+            tsmiVerAlumnos.Size = new Size(180, 22);
             tsmiVerAlumnos.Text = "Ver Alumnos";
             tsmiVerAlumnos.Click += tsmiVerAlumnos_Click;
             // 
             // añadirAlumnoToolStripMenuItem
             // 
             añadirAlumnoToolStripMenuItem.Name = "añadirAlumnoToolStripMenuItem";
-            añadirAlumnoToolStripMenuItem.Size = new Size(171, 22);
+            añadirAlumnoToolStripMenuItem.Size = new Size(180, 22);
             añadirAlumnoToolStripMenuItem.Text = "Añadir Alumno";
             añadirAlumnoToolStripMenuItem.Click += añadirAlumnoToolStripMenuItem_Click;
             // 
             // modificarAlumnoToolStripMenuItem
             // 
+            modificarAlumnoToolStripMenuItem.Enabled = false;
             modificarAlumnoToolStripMenuItem.Name = "modificarAlumnoToolStripMenuItem";
-            modificarAlumnoToolStripMenuItem.Size = new Size(171, 22);
+            modificarAlumnoToolStripMenuItem.Size = new Size(180, 22);
             modificarAlumnoToolStripMenuItem.Text = "Modificar Alumno";
             // 
             // tsmiProyectos
@@ -136,21 +138,22 @@
             // verProyectosToolStripMenuItem
             // 
             verProyectosToolStripMenuItem.Name = "verProyectosToolStripMenuItem";
-            verProyectosToolStripMenuItem.Size = new Size(175, 22);
+            verProyectosToolStripMenuItem.Size = new Size(180, 22);
             verProyectosToolStripMenuItem.Text = "Ver Proyectos";
             verProyectosToolStripMenuItem.Click += verProyectosToolStripMenuItem_Click;
             // 
             // añadirProyectosToolStripMenuItem
             // 
             añadirProyectosToolStripMenuItem.Name = "añadirProyectosToolStripMenuItem";
-            añadirProyectosToolStripMenuItem.Size = new Size(175, 22);
+            añadirProyectosToolStripMenuItem.Size = new Size(180, 22);
             añadirProyectosToolStripMenuItem.Text = "Añadir Proyecto";
             añadirProyectosToolStripMenuItem.Click += añadirProyectosToolStripMenuItem_Click;
             // 
             // modificarProyectosToolStripMenuItem
             // 
+            modificarProyectosToolStripMenuItem.Enabled = false;
             modificarProyectosToolStripMenuItem.Name = "modificarProyectosToolStripMenuItem";
-            modificarProyectosToolStripMenuItem.Size = new Size(175, 22);
+            modificarProyectosToolStripMenuItem.Size = new Size(180, 22);
             modificarProyectosToolStripMenuItem.Text = "Modificar Proyecto";
             // 
             // tsmiLogOut
@@ -199,7 +202,7 @@
         private ToolStripMenuItem tsmiAlumnos;
         private ToolStripMenuItem tsmiProyectos;
         private ToolStripMenuItem tsmiLogOut;
-        private ListView ltvListaPrincipal;
+        private static ListView ltvListaPrincipal;
         private ToolStripMenuItem tsmiVerCiclos;
         private ToolStripMenuItem tsmiVerProfesores;
         private ToolStripMenuItem tsmiVerAlumnos;
