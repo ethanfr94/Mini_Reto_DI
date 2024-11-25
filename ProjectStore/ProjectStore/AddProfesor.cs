@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjectStore.Entities;
@@ -37,20 +38,21 @@ namespace ProjectStore
             }
             else
             {
-                Profesor profesor = new Profesor
-                {
-                    Nombre = txtNombre.Text,
-                    Apellidos = txtApellidos.Text,
-                    Dni = txtDni.Text,
-                    Email = txtEmail.Text,
-                    Contraseña = txtContraseña.Text,
-                    Telefono = txtTelefono.Text,
-                    Genero = (Genero) cmbGenero.SelectedItem,
-                    FechaNacimiento = dtpFechaNac.Value,
-                    Especialidad = txtEspecialidad.Text,
-                    Activo = true
-                };
-                Principal.profesores.Add(profesor);
+                string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                Profesor p = new Profesor();
+
+                p.Nombre = txtNombre.Text;
+                p.Apellidos = txtApellidos.Text;
+                p.Dni = txtDni.Text;
+                if(Regex.IsMatch(txtEmail.Text, emailPattern)) p.Email = txtEmail.Text;                
+                p.Contraseña = txtContraseña.Text;
+                p.Telefono = txtTelefono.Text;
+                p.Genero = (Genero)cmbGenero.SelectedItem;
+                p.FechaNacimiento = dtpFechaNac.Value;
+                p.Especialidad = txtEspecialidad.Text;
+                p.Activo = true;
+                
+                Principal.profesores.Add(p);
                 DialogResult = DialogResult.OK;
             }
         }

@@ -18,6 +18,9 @@ namespace ProjectStore
         {
             InitializeComponent();
             this.email = email;
+            modificarAlumnoToolStripMenuItem.Enabled = false;
+            modificarProfesorToolStripMenuItem.Enabled = false;
+            modificarProyectosToolStripMenuItem.Enabled = false;
         }
 
         // Evento para visualizar los ciclos
@@ -26,7 +29,7 @@ namespace ProjectStore
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
 
-            ltvListaPrincipal.Columns.Add("Codigo", 35);
+            ltvListaPrincipal.Columns.Add("Codigo", 65);
             ltvListaPrincipal.Columns.Add("Ciclo", 100);
             ltvListaPrincipal.Columns.Add("Etapa", 50);
             ltvListaPrincipal.Columns.Add("Titulo", 100);
@@ -65,7 +68,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Email", 100);
             ltvListaPrincipal.Columns.Add("Contraseña", 100);
             ltvListaPrincipal.Columns.Add("Telefono", 100);
-            ltvListaPrincipal.Columns.Add("Genero", 25);
+            ltvListaPrincipal.Columns.Add("Genero", 50);
             ltvListaPrincipal.Columns.Add("Fecha de Nacimiento", 100);
             ltvListaPrincipal.Columns.Add("Especialidad", 100);
             ltvListaPrincipal.Columns.Add("Activo", 25);
@@ -109,7 +112,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Email", 100);
             ltvListaPrincipal.Columns.Add("Contraseña", 100);
             ltvListaPrincipal.Columns.Add("Telefono", 100);
-            ltvListaPrincipal.Columns.Add("Genero", 35);
+            ltvListaPrincipal.Columns.Add("Genero", 50);
             ltvListaPrincipal.Columns.Add("Fecha de Nacimiento", 100);
             ltvListaPrincipal.Columns.Add("Activo", 25);
             ltvListaPrincipal.Columns.Add("Admin", 25);
@@ -231,7 +234,19 @@ namespace ProjectStore
 
         private void modificarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            ModProfesor modProfesor = new ModProfesor();
+            modProfesor.ShowDialog();
+        }
+
+        // evento que habilita los botones de modificacion al seleccionar un elemento de la lista
+        private void ltvListaPrincipal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltvListaPrincipal.SelectedItems.Count > 0)
+                {
+                    modificarAlumnoToolStripMenuItem.Enabled = true;
+                    modificarProfesorToolStripMenuItem.Enabled = true;
+                    modificarProyectosToolStripMenuItem.Enabled = true;
+                }
         }
     }
 }

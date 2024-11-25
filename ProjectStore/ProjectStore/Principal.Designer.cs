@@ -81,21 +81,21 @@
             // tsmiVerProfesores
             // 
             tsmiVerProfesores.Name = "tsmiVerProfesores";
-            tsmiVerProfesores.Size = new Size(180, 22);
+            tsmiVerProfesores.Size = new Size(172, 22);
             tsmiVerProfesores.Text = "Ver Profesores";
             tsmiVerProfesores.Click += tsmiVerProfesores_Click;
             // 
             // añadirProfesorToolStripMenuItem
             // 
             añadirProfesorToolStripMenuItem.Name = "añadirProfesorToolStripMenuItem";
-            añadirProfesorToolStripMenuItem.Size = new Size(180, 22);
+            añadirProfesorToolStripMenuItem.Size = new Size(172, 22);
             añadirProfesorToolStripMenuItem.Text = "Añadir Profesor";
             añadirProfesorToolStripMenuItem.Click += añadirProfesorToolStripMenuItem_Click;
             // 
             // modificarProfesorToolStripMenuItem
             // 
             modificarProfesorToolStripMenuItem.Name = "modificarProfesorToolStripMenuItem";
-            modificarProfesorToolStripMenuItem.Size = new Size(180, 22);
+            modificarProfesorToolStripMenuItem.Size = new Size(172, 22);
             modificarProfesorToolStripMenuItem.Text = "Modificar Profesor";
             modificarProfesorToolStripMenuItem.Click += modificarProfesorToolStripMenuItem_Click;
             // 
@@ -162,6 +162,7 @@
             // 
             // ltvListaPrincipal
             // 
+            ltvListaPrincipal.FullRowSelect = true;
             ltvListaPrincipal.GridLines = true;
             ltvListaPrincipal.Location = new Point(12, 27);
             ltvListaPrincipal.MultiSelect = false;
@@ -170,6 +171,7 @@
             ltvListaPrincipal.TabIndex = 8;
             ltvListaPrincipal.UseCompatibleStateImageBehavior = false;
             ltvListaPrincipal.View = View.Details;
+            ltvListaPrincipal.SelectedIndexChanged += ltvListaPrincipal_SelectedIndexChanged;
             // 
             // Principal
             // 
