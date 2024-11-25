@@ -12,7 +12,7 @@ namespace ProjectStore
         public static List<Ciclo> ciclos = new List<Ciclo>();
 
         // Variable para almacenar el correo del usuario que inició sesión
-        private string email;
+        private string email = null;
 
         public Principal(string email)
         {
@@ -183,7 +183,7 @@ namespace ProjectStore
         // Evento para cerrar sesión
         private void OnClickLogout(object sender, EventArgs e)
         {
-            email = string.Empty;
+            email = null;
 
             // Abre el formulario principal en un hilo separado para evitar bloquear la UI
             Thread thread = new Thread(() =>
@@ -227,6 +227,11 @@ namespace ProjectStore
         {
             AddProyecto addProyecto = new AddProyecto();
             addProyecto.ShowDialog();
+        }
+
+        private void modificarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
