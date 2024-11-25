@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
 
 
@@ -19,29 +18,6 @@ namespace ProjectStore
         {
             client = new HttpClient();
         }
-
-        public async Task<Profesor> ProfesorporCorreoPassword(string correo, string password)
-        {
-            try
-            {
-                HttpClient client = new HttpClient();
-                string encodedCorreo = System.Web.HttpUtility.UrlEncode(correo);
-                string encodedPassword = System.Web.HttpUtility.UrlEncode(password);
-                string url = $"http://localhost:4000/profesores/email/{encodedCorreo}?contraseña={encodedPassword}";
-
-                HttpResponseMessage response = await client.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-
-                string responseJson = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<Profesor>(responseJson);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-
 
         /*    public async Task<List<Incidencias>> GetIncidencias()
             {
@@ -88,22 +64,22 @@ namespace ProjectStore
             }
         */
 
-        public async Task<List<Profesor>> ProfesorporCorreo(String correo, String password)
+        public async Task<Profesor> ProfesorporCorreoPassword(string correo, string password)
         {
             try
             {
                 // Cambiar por  ip de  equipo
 
                 // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/profesores/email/{correo}");
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/profesores/email/{correo}?contraseña={password}");
                 response.EnsureSuccessStatusCode();
                 string responseJson = await response.Content.ReadAsStringAsync();
-                List<Profesor> profesor = JsonConvert.DeserializeObject<List<Profesor>>(responseJson);
+                Profesor profesor = JsonConvert.DeserializeObject<Profesor>(responseJson);
                 return profesor;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
         }
@@ -175,7 +151,7 @@ namespace ProjectStore
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
         }
@@ -196,7 +172,7 @@ namespace ProjectStore
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
         }
@@ -217,7 +193,7 @@ namespace ProjectStore
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
         }
@@ -238,7 +214,7 @@ namespace ProjectStore
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
         }
@@ -258,7 +234,7 @@ namespace ProjectStore
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
         }
@@ -272,6 +248,51 @@ namespace ProjectStore
                 StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
                 // Realizar la solicitud PUT
+                //ACTUALIZAR URL
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/actualizarProyecto{id}", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se actualizó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al actualizar la incidencia
+                return false;
+            }
+        }
+        public async Task<bool> ActualizarAlumno(int id, Alumno alumno)
+        {
+            try
+            {
+                // Convertir el objeto incidencia a formato JSON
+                string jsonData = JsonConvert.SerializeObject(alumno);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud PUT
+                //ACTUALIZAR URL
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/actualizarProyecto{id}", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se actualizó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al actualizar la incidencia
+                return false;
+            }
+        }
+        public async Task<bool> ActualizarProfesor(int id, Profesor profesor)
+        {
+            try
+            {
+                // Convertir el objeto incidencia a formato JSON
+                string jsonData = JsonConvert.SerializeObject(profesor);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud PUT
+                //ACTUALIZAR URL
                 HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/actualizarProyecto{id}", content);
                 response.EnsureSuccessStatusCode();
 
@@ -285,7 +306,72 @@ namespace ProjectStore
             }
         }
 
+        public async Task<bool> InsertarProyecto(Proyecto proyecto)
+        {
+            try
+            {
+                // Convertir el objeto incidencia a formato JSON
+                string jsonData = JsonConvert.SerializeObject(proyecto);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud PUT
+                //ACTUALIZAR URL
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/proyectos", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se actualizó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al actualizar la incidencia
+                return false;
+            }
+        }
+        public async Task<bool> InsertarAlumno(Alumno alumno)
+        {
+            try
+            {
+                // Convertir el objeto incidencia a formato JSON
+                string jsonData = JsonConvert.SerializeObject(alumno);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud PUT
+                //ACTUALIZAR URL
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/alummnos", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se actualizó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al actualizar la incidencia
+                return false;
+            }
+        }
+        public async Task<bool> InsertProfesor(Profesor profesor)
+        {
+            try
+            {
+                // Convertir el objeto incidencia a formato JSON
+                string jsonData = JsonConvert.SerializeObject(profesor);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud PUT
+                //ACTUALIZAR URL
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/profesores", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se actualizó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al actualizar la incidencia
+                return false;
+            }
+        }
     }
 
 }
-
