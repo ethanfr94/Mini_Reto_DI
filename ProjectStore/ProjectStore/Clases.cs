@@ -53,6 +53,7 @@ namespace ProjectStore
         private string especialidad;
         private bool activo;
         private bool admin;
+        private List<Proyecto> proyectos;
 
         public String Id { get => id; set => id = value; }
         public String Nombre { get => nombre; set => nombre = value; }

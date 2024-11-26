@@ -17,8 +17,31 @@ namespace ProjectStore
         public Principal(string email)
         {
             InitializeComponent();
+            // Profesor p = new ConexionApi().ProfesorporCorreo(email);
+            // this.Text = p.Nombre + " " + p.Apellidos;
+            // esAdmin(p);            
 
             this.email = email;
+        }
+
+        private void esAdmin(Profesor p)
+        {
+            if (!p.Admin)
+            {
+                if(ltvListaPrincipal.SelectedItems[0].SubItems[11].Text == p.Id)
+                {                    
+                    modificarProyectosToolStripMenuItem.Visible = true;
+                }             
+            }
+            else
+            {
+                addAlumnoToolStripMenuItem.Visible = true;
+                addProfesorToolStripMenuItem.Visible = true;
+                addProyectosToolStripMenuItem.Visible = true;
+                modificarAlumnoToolStripMenuItem.Visible = true;
+                modificarProfesorToolStripMenuItem.Visible = true;
+                modificarProyectosToolStripMenuItem.Visible = true;
+            }
         }
 
         // Evento para visualizar los ciclos

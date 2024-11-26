@@ -48,23 +48,22 @@ namespace ProjectStore
                     if (profesor.Email != txtEmail.Text)
                     {
                         profesor.Email = txtEmail.Text;
-                        //funcion update email
                     }
                     if (profesor.Contraseña != txtContraseña.Text)
                     {
                         profesor.Contraseña = txtContraseña.Text;
-                        //funcion update contraseña
                     }
                     if (profesor.Telefono != txtTelefono.Text)
                     {
                         profesor.Telefono = txtTelefono.Text;
-                        //funcion update telefono
                     }
                     if (profesor.Activo != chkActivo.Checked)
                     {
                         profesor.Activo = chkActivo.Checked;
-                        //funcion update activo
                     }
+
+                    //funcion para modificar profesor
+                    //updte from profesores set email = txtEmail.Text, contraseña = txtContraseña.Text, telefono = txtTelefono.Text, activo = chkActivo.Checked where id = profesor.Id;
                 }
                 DialogResult = DialogResult.OK;
             }
