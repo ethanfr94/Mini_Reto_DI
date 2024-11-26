@@ -1,377 +1,252 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace ProjectStore
 {
     internal class ConexionApi
     {
-        private HttpClient client;
+        private readonly HttpClient client;
 
         public ConexionApi()
         {
             client = new HttpClient();
         }
 
-        /*    public async Task<List<Incidencias>> GetIncidencias()
-            {
-                try
-                {
-                    // Cambiar por  ip de  equipo
-
-                    // ip 10.0.22.11
-                    HttpResponseMessage response = await client.GetAsync("http://10.0.22.11:8080/api/incidencias");
-                    response.EnsureSuccessStatusCode();
-
-                    string responseJson = await response.Content.ReadAsStringAsync();
-
-                    List<Incidencias> incidencias = JsonConvert.DeserializeObject<List<Incidencias>>(responseJson);
-                    return incidencias;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return null;
-                }
-            }
-
-            public async Task<bool> ActualizarIncidencia(int id, Incidencias incidencia)
-            {
-                try
-                {
-                    // Convertir el objeto incidencia a formato JSON
-                    string jsonData = JsonConvert.SerializeObject(incidencia);
-                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-                    // Realizar la solicitud PUT
-                    HttpResponseMessage response = await client.PutAsync($"http://localhost:8080/api/incidencias/{id}", content);
-                    response.EnsureSuccessStatusCode();
-
-                    // La incidencia se actualizó correctamente
-                    return true;
-                }
-                catch (Exception)
-                {
-                    // Hubo un error al actualizar la incidencia
-                    return false;
-                }
-            }
-        */
-
+        // Obtiene un profesor basado en su correo y contraseña.
         public async Task<Profesor> ProfesorporCorreoPassword(string correo, string password)
         {
             try
             {
-                // Cambiar por  ip de  equipo
-
-                // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/profesores/email/{correo}?contraseña={password}");
+                string url = $"http://localhost:4000/profesores/email/{correo}?contraseña={password}";
+                HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
-                string responseJson = await response.Content.ReadAsStringAsync();
-                Profesor profesor = JsonConvert.DeserializeObject<Profesor>(responseJson);
-                return profesor;
-            }
-            catch (Exception ex)
-            {
 
+                string responseJson = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Profesor>(responseJson) ?? null;
+            }
+            catch (Exception)
+            {
                 return null;
             }
         }
+
+        // Obtiene una lista de todos los profesores.
         public async Task<List<Profesor>> ObtenerProfesor()
         {
             try
             {
-                // Formar la URL con el ID de la incidencia
                 string url = "http://localhost:4000/profesores";
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
+
                 string responseJson = await response.Content.ReadAsStringAsync();
-                List<Profesor> profesores = JsonConvert.DeserializeObject<List<Profesor>>(responseJson);
-                return profesores;
+                return JsonConvert.DeserializeObject<List<Profesor>>(responseJson) ?? new List<Profesor>();
             }
             catch (Exception)
             {
                 return null;
             }
         }
+
+        // Obtiene un profesor específico por su ID.
         public async Task<Profesor> ObtenerProfesorIndividual(int id)
         {
             try
             {
-                // Formar la URL con el ID de la incidencia
                 string url = $"http://localhost:4000/profesores/{id}";
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
+
                 string responseJson = await response.Content.ReadAsStringAsync();
-                Profesor profesor = JsonConvert.DeserializeObject<Profesor>(responseJson);
-                return profesor;
+                return JsonConvert.DeserializeObject<Profesor>(responseJson) ?? null;
             }
             catch (Exception)
             {
                 return null;
             }
         }
+
+        // Obtiene un proyecto específico por su ID.
         public async Task<Proyecto> ObtenerProyectoIndividual(int id)
         {
             try
             {
-                // Formar la URL con el ID de la incidencia
                 string url = $"http://localhost:4000/proyectos/idproyecto/{id}";
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
+
                 string responseJson = await response.Content.ReadAsStringAsync();
-                Proyecto proyecto = JsonConvert.DeserializeObject<Proyecto>(responseJson);
-                return proyecto;
+                return JsonConvert.DeserializeObject<Proyecto>(responseJson) ?? null;
             }
             catch (Exception)
             {
                 return null;
             }
         }
+
+        // Obtiene una lista de todos los proyectos.
         public async Task<List<Proyecto>> ObtenerProyectos()
         {
             try
             {
-                // Cambiar por  ip de  equipo
-
-                // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/proyectos");
+                string url = "http://localhost:4000/proyectos";
+                HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
-
-                List<Proyecto> proyectos = JsonConvert.DeserializeObject<List<Proyecto>>(responseJson);
-                return proyectos;
+                return JsonConvert.DeserializeObject<List<Proyecto>>(responseJson) ?? new List<Proyecto>();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 return null;
             }
         }
-        public async Task<Alumno> ObtenerAlumnoindividual(int id)
+
+        // Obtiene un alumno específico por su ID.
+        public async Task<Alumno> ObtenerAlumnoIndividual(int id)
         {
             try
             {
-                // Cambiar por  ip de  equipo
-
-                // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/alumnos/{id}");
+                string url = $"http://localhost:4000/alumnos/{id}";
+                HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
-
-                Alumno alumno = JsonConvert.DeserializeObject<Alumno>(responseJson);
-                return alumno;
+                return JsonConvert.DeserializeObject<Alumno>(responseJson) ?? null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 return null;
             }
         }
+
+        // Obtiene una lista de todos los alumnos.
         public async Task<List<Alumno>> ObtenerAlumnos()
         {
             try
             {
-                // Cambiar por  ip de  equipo
-
-                // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync("http://localhost:4000/alumnos");
+                string url = "http://localhost:4000/alumnos";
+                HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
-
-                List<Alumno> alumnos = JsonConvert.DeserializeObject<List<Alumno>>(responseJson);
-                return alumnos;
+                return JsonConvert.DeserializeObject<List<Alumno>>(responseJson) ?? new List<Alumno>();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 return null;
             }
         }
-        public async Task<Ciclo> ObtenerCiclosindividual(int id)
+
+        // Obtiene un ciclo específico por su ID.
+        public async Task<Ciclo> ObtenerCicloIndividual(int id)
         {
             try
             {
-                // Cambiar por  ip de  equipo
-
-                // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:4000/ciclos/codciclos/{id}");
+                string url = $"http://localhost:4000/ciclos/codciclos/{id}";
+                HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
-
-                Ciclo ciclo = JsonConvert.DeserializeObject<Ciclo>(responseJson);
-                return ciclo;
+                return JsonConvert.DeserializeObject<Ciclo>(responseJson) ?? null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 return null;
             }
         }
+
+        // Obtiene una lista de todos los ciclos.
         public async Task<List<Ciclo>> ObtenerCiclos()
         {
             try
             {
-                // Cambiar por  ip de  equipo
-                // ip 10.0.22.11
-                HttpResponseMessage response = await client.GetAsync("http://localhost:4000/ciclos");
+                string url = "http://localhost:4000/ciclos";
+                HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
-
-                List<Ciclo> ciclos = JsonConvert.DeserializeObject<List<Ciclo>>(responseJson);
-                return ciclos;
+                return JsonConvert.DeserializeObject<List<Ciclo>>(responseJson) ?? new List<Ciclo>();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 return null;
             }
         }
 
+        // Actualiza un proyecto con un ID específico.
         public async Task<bool> ActualizarProyecto(int id, Proyecto proyecto)
         {
-            try
-            {
-                // Convertir el objeto incidencia a formato JSON
-                string jsonData = JsonConvert.SerializeObject(proyecto);
-                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-                // Realizar la solicitud PUT
-                //ACTUALIZAR URL
-                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/actualizarProyecto{id}", content);
-                response.EnsureSuccessStatusCode();
-
-                // La incidencia se actualizó correctamente
-                return true;
-            }
-            catch (Exception)
-            {
-                // Hubo un error al actualizar la incidencia
-                return false;
-            }
+            return await ActualizarEntidad($"http://localhost:4000/actualizarProyecto{id}", proyecto);
         }
+
+        // Actualiza un alumno con un ID específico.
         public async Task<bool> ActualizarAlumno(int id, Alumno alumno)
         {
-            try
-            {
-                // Convertir el objeto incidencia a formato JSON
-                string jsonData = JsonConvert.SerializeObject(alumno);
-                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-                // Realizar la solicitud PUT
-                //ACTUALIZAR URL
-                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/actualizarProyecto{id}", content);
-                response.EnsureSuccessStatusCode();
-
-                // La incidencia se actualizó correctamente
-                return true;
-            }
-            catch (Exception)
-            {
-                // Hubo un error al actualizar la incidencia
-                return false;
-            }
+            return await ActualizarEntidad($"http://localhost:4000/actualizarAlumno{id}", alumno);
         }
+
+        // Actualiza un profesor con un ID específico.
         public async Task<bool> ActualizarProfesor(int id, Profesor profesor)
         {
-            try
-            {
-                // Convertir el objeto incidencia a formato JSON
-                string jsonData = JsonConvert.SerializeObject(profesor);
-                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-                // Realizar la solicitud PUT
-                //ACTUALIZAR URL
-                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/actualizarProyecto{id}", content);
-                response.EnsureSuccessStatusCode();
-
-                // La incidencia se actualizó correctamente
-                return true;
-            }
-            catch (Exception)
-            {
-                // Hubo un error al actualizar la incidencia
-                return false;
-            }
+            return await ActualizarEntidad($"http://localhost:4000/actualizarProfesor{id}", profesor);
         }
 
+        // Inserta un nuevo proyecto.
         public async Task<bool> InsertarProyecto(Proyecto proyecto)
         {
-            try
-            {
-                // Convertir el objeto incidencia a formato JSON
-                string jsonData = JsonConvert.SerializeObject(proyecto);
-                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-                // Realizar la solicitud PUT
-                //ACTUALIZAR URL
-                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/proyectos", content);
-                response.EnsureSuccessStatusCode();
-
-                // La incidencia se actualizó correctamente
-                return true;
-            }
-            catch (Exception)
-            {
-                // Hubo un error al actualizar la incidencia
-                return false;
-            }
+            return await InsertarEntidad("http://localhost:4000/proyectos", proyecto);
         }
+
+        // Inserta un nuevo alumno.
         public async Task<bool> InsertarAlumno(Alumno alumno)
         {
-            try
-            {
-                // Convertir el objeto incidencia a formato JSON
-                string jsonData = JsonConvert.SerializeObject(alumno);
-                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-                // Realizar la solicitud PUT
-                //ACTUALIZAR URL
-                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/alummnos", content);
-                response.EnsureSuccessStatusCode();
-
-                // La incidencia se actualizó correctamente
-                return true;
-            }
-            catch (Exception)
-            {
-                // Hubo un error al actualizar la incidencia
-                return false;
-            }
+            return await InsertarEntidad("http://localhost:4000/alumnos", alumno);
         }
-        public async Task<bool> InsertProfesor(Profesor profesor)
+
+        // Inserta un nuevo profesor.
+        public async Task<bool> InsertarProfesor(Profesor profesor)
+        {
+            return await InsertarEntidad("http://localhost:4000/profesores", profesor);
+        }
+
+        // Método genérico para actualizar una entidad.
+        private async Task<bool> ActualizarEntidad<T>(string url, T entidad)
         {
             try
             {
-                // Convertir el objeto incidencia a formato JSON
-                string jsonData = JsonConvert.SerializeObject(profesor);
+                string jsonData = JsonConvert.SerializeObject(entidad);
                 StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-                // Realizar la solicitud PUT
-                //ACTUALIZAR URL
-                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/profesores", content);
+                HttpResponseMessage response = await client.PutAsync(url, content);
                 response.EnsureSuccessStatusCode();
-
-                // La incidencia se actualizó correctamente
                 return true;
             }
             catch (Exception)
             {
-                // Hubo un error al actualizar la incidencia
+                return false;
+            }
+        }
+
+        // Método genérico para insertar una entidad.
+        private async Task<bool> InsertarEntidad<T>(string url, T entidad)
+        {
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(entidad);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(url, content);
+                response.EnsureSuccessStatusCode();
+                return true;
+            }
+            catch (Exception)
+            {
                 return false;
             }
         }
     }
-
 }
