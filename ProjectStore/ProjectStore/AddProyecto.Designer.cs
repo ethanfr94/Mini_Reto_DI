@@ -229,6 +229,7 @@
             // 
             // cmbCiclo
             // 
+            cmbCiclo.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCiclo.FormattingEnabled = true;
             cmbCiclo.Location = new Point(154, 273);
             cmbCiclo.Name = "cmbCiclo";
@@ -246,6 +247,7 @@
             // 
             // cmbTutor
             // 
+            cmbTutor.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTutor.FormattingEnabled = true;
             cmbTutor.Location = new Point(154, 303);
             cmbTutor.Name = "cmbTutor";

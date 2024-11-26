@@ -69,6 +69,7 @@
             // 
             // cmbGenero
             // 
+            cmbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGenero.FormattingEnabled = true;
             cmbGenero.Location = new Point(154, 187);
             cmbGenero.Name = "cmbGenero";
@@ -88,6 +89,7 @@
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(200, 23);
             txtContraseña.TabIndex = 32;
+            txtContraseña.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 

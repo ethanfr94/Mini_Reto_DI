@@ -1,73 +1,89 @@
-﻿using ProjectStore.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectStore.Entities;
 
 namespace ProjectStore
 {
     public partial class ModAlumno : Form
     {
-        Alumno alumno;
+        private Alumno alumno;
+
         public ModAlumno(Alumno a)
         {
             InitializeComponent();
             alumno = a;
-            txtNombre.Text = a.Nombre;
-            txtApellidos.Text = a.Apellidos;
-            txtDni.Text = a.Dni;
-            txtEmail.Text = a.Email;
-            txtContraseña.Text = a.Contraseña;
-            txtTelefono.Text = a.Telefono;
-            cmbGenero.Text = a.Genero.ToString();
-            dtpFechaNac.Value = a.FechaNacimiento;
-            cmbCiclo.Text = a.Ciclo.Nombre;
-            chkActivo.Checked = a.Activo;
+            InicializarCampos();
         }
 
+        // Inicializa los campos con los datos del alumno
+        private void InicializarCampos()
+        {
+            txtNombre.Text = alumno.Nombre;
+            txtApellidos.Text = alumno.Apellidos;
+            txtDni.Text = alumno.Dni;
+            txtEmail.Text = alumno.Email;
+            txtContraseña.Text = alumno.Contraseña;
+            txtTelefono.Text = alumno.Telefono;
+            cmbGenero.Text = alumno.Genero.ToString();
+            dtpFechaNac.Value = alumno.FechaNacimiento;
+            cmbCiclo.Text = alumno.Ciclo.Nombre;
+            chkActivo.Checked = alumno.Activo;
+        }
+
+        // Valida los campos requeridos antes de modificar
+        private bool ValidarCampos()
+        {
+            var campos = new[] { txtEmail.Text, txtContraseña.Text, cmbGenero.Text };
+
+            if (campos.Any(c => string.IsNullOrWhiteSpace(c)))
+            {
+                MessageBox.Show("Faltan campos por rellenar",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        // Método para aplicar la modificación al alumno
+        private void ModificarAlumno()
+        {
+            if (alumno.Email != txtEmail.Text) alumno.Email = txtEmail.Text;
+            if (alumno.Contraseña != txtContraseña.Text) alumno.Contraseña = txtContraseña.Text;
+            if (alumno.Telefono != txtTelefono.Text) alumno.Telefono = txtTelefono.Text;
+            if (alumno.Activo != chkActivo.Checked) alumno.Activo = chkActivo.Checked;
+
+            //
+            // API
+            //
+        }
+
+        // Botón de cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
+        // Botón de modificar
         private void btnMod_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Esta seguro de modificar los datos", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            if (DialogResult == DialogResult.OK)
-            {
-                if (new[] { txtEmail.Text, txtContraseña.Text, cmbGenero.Text }.Any(c => string.IsNullOrWhiteSpace(c)))
-                {
-                    MessageBox.Show("Faltan campos por rellenar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (alumno.Email != txtEmail.Text)
-                    {
-                        alumno.Email = txtEmail.Text;
-                    }
-                    if (alumno.Contraseña != txtContraseña.Text)
-                    {
-                        alumno.Contraseña = txtContraseña.Text;
-                    }
-                    if (alumno.Telefono != txtTelefono.Text)
-                    {
-                        alumno.Telefono = txtTelefono.Text;
-                    }
-                    if (alumno.Activo != chkActivo.Checked)
-                    {
-                        alumno.Activo = chkActivo.Checked;
-                    }
+            // Confirmación de modificación
+            var confirmResult = MessageBox.Show("¿Está seguro de modificar los datos?",
+                                "Atención",
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Exclamation);
 
-                    //funcion para modificar alumno
+            if (confirmResult == DialogResult.OK)
+            {
+                if (ValidarCampos())
+                {
+                    ModificarAlumno();
+                    DialogResult = DialogResult.OK;
                 }
-                DialogResult = DialogResult.OK;
             }
         }
     }
 }
-
