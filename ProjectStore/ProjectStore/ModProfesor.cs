@@ -34,7 +34,7 @@ namespace ProjectStore
             DialogResult = DialogResult.Cancel;
         }
 
-        private void btnMod_Click(object sender, EventArgs e)
+        private async void btnMod_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Esta seguro de modificar los datos", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (DialogResult == DialogResult.OK)
@@ -62,8 +62,16 @@ namespace ProjectStore
                         profesor.Activo = chkActivo.Checked;
                     }
 
-                    //funcion para modificar profesor
-                    //updte from profesores set email = txtEmail.Text, contraseña = txtContraseña.Text, telefono = txtTelefono.Text, activo = chkActivo.Checked where id = profesor.Id;
+                    ConexionApi conexion = new ConexionApi();
+                    if (await conexion.ActualizarProfesor(profesor.Id, profesor))
+                    {
+                        MessageBox.Show("Profesor modificado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el profesor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
                 DialogResult = DialogResult.OK;
             }

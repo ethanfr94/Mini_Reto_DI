@@ -36,7 +36,7 @@ namespace ProjectStore
             DialogResult = DialogResult.Cancel;
         }
 
-        private void btnMod_Click(object sender, EventArgs e)
+        private async void btnMod_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Esta seguro de modificar los datos", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (DialogResult == DialogResult.OK)
@@ -64,6 +64,15 @@ namespace ProjectStore
                         proyecto.Tutor = Principal.profesores[cmbTutor.SelectedIndex];
                     }
                     
+                    ConexionApi conexion = new ConexionApi();
+                    if (await conexion.ActualizarProyecto(proyecto.Id, proyecto))
+                    {
+                        MessageBox.Show("Proyecto modificado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                 }
 

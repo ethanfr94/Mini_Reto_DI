@@ -198,15 +198,15 @@ namespace ProjectStore
                 ListViewItem item = new ListViewItem(proyecto.Id);
                 item.SubItems.Add(proyecto.Nombre);
                 item.SubItems.Add(proyecto.Tipo.ToString());
-                item.SubItems.Add(proyecto.Resumen);
+                item.SubItems.Add("");
                 item.SubItems.Add(proyecto.Anio_academico.ToString());
-                item.SubItems.Add(proyecto.Fecha_presentacion.ToString());
-                item.SubItems.Add(proyecto.Logo);
-                item.SubItems.Add(proyecto.Memoria);
-                item.SubItems.Add(proyecto.Archivos);
-                item.SubItems.Add(proyecto.Comentarios);
-                item.SubItems.Add(proyecto.Ciclo.ToString());
-                item.SubItems.Add(proyecto.Tutor.ToString());
+                item.SubItems.Add("proyecto.Fecha_presentacion.ToString()");
+                item.SubItems.Add("proyecto.Logo");
+                item.SubItems.Add("proyecto.Memoria");
+                item.SubItems.Add("proyecto.Archivos");
+                item.SubItems.Add("proyecto.Comentarios");
+                item.SubItems.Add(proyecto.Ciclo.Codigo);
+                item.SubItems.Add(proyecto.Tutor.Id);
 
                 ltvListaPrincipal.Items.Add(item);
             }
@@ -316,8 +316,7 @@ namespace ProjectStore
         private void ltvListaPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ltvListaPrincipal.SelectedItems.Count > 0 && ltvListaPrincipal.SelectedItems[0].SubItems[11].Text == prof.Id || prof.Admin)
-            {
-                       
+            {                       
                 modificarAlumnoToolStripMenuItem.Enabled = true;
                 modificarProfesorToolStripMenuItem.Enabled = true;
                 modificarProyectosToolStripMenuItem.Enabled = true;

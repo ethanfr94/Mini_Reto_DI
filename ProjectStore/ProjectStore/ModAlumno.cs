@@ -35,7 +35,7 @@ namespace ProjectStore
             DialogResult = DialogResult.Cancel;
         }
 
-        private void btnMod_Click(object sender, EventArgs e)
+        private async void btnMod_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Esta seguro de modificar los datos", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (DialogResult == DialogResult.OK)
@@ -63,7 +63,17 @@ namespace ProjectStore
                         alumno.Activo = chkActivo.Checked;
                     }
 
-                    //funcion para modificar alumno
+                    ConexionApi conexion = new ConexionApi();
+                    if (await conexion.ActualizarAlumno(alumno.Id, alumno))
+                    {
+                        MessageBox.Show("Alumno modificado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    
                 }
                 DialogResult = DialogResult.OK;
             }
