@@ -11,17 +11,16 @@ namespace ProjectStore
         public static List<Proyecto> proyectos;
         public static List<Ciclo> ciclos;
 
-        // Variable para almacenar el correo del usuario que inició sesión
-        private string email = null;
+        // Variable para almacenar el correo del usuario que inició sesión        
 
-        public Principal(string email)
+        public Principal(Profesor p)
         {
             InitializeComponent();
-            // Profesor p = new ConexionApi().ProfesorporCorreo(email);
-            // this.Text = p.Nombre + " " + p.Apellidos;
-            // esAdmin(p);            
+            Profesor prof = p;
+            this.Text = prof.Nombre + " " + prof.Apellidos;
+            esAdmin(p);   
+            
 
-            this.email = email;
         }
 
         private void esAdmin(Profesor p)
@@ -45,7 +44,7 @@ namespace ProjectStore
         }
 
         // Evento para visualizar los ciclos
-        private void tsmiVerCiclos_Click(object sender, EventArgs e)
+        private async void tsmiVerCiclos_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
@@ -79,7 +78,7 @@ namespace ProjectStore
         }
 
         // Evento para visualizar los profesores
-        private void tsmiVerProfesores_Click(object sender, EventArgs e)
+        private async void tsmiVerProfesores_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
@@ -96,8 +95,12 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Especialidad", 100);
             ltvListaPrincipal.Columns.Add("Activo", 25);
             ltvListaPrincipal.Columns.Add("Admin", 25);
-            //profesores = funcion de la api que devuelve los profesores;
-            cargaProfesores();
+            profesores = await new ConexionApi().ObtenerProfesor();
+            if (profesores != null)
+            {
+                cargaProfesores();
+            }
+            
         }
 
         // Método para cargar los profesores en el ListView
@@ -124,7 +127,7 @@ namespace ProjectStore
         }
 
         // Evento para visualizar los alumnos
-        private void tsmiVerAlumnos_Click(object sender, EventArgs e)
+        private async void tsmiVerAlumnos_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
@@ -140,8 +143,11 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Fecha de Nacimiento", 100);
             ltvListaPrincipal.Columns.Add("Activo", 25);
             ltvListaPrincipal.Columns.Add("Admin", 25);
-            //alumnos = funcion de la api que devuelve los alumnos;
-            cargaAlumnos();
+            alumnos = await new ConexionApi().ObtenerAlumnos();
+            if (alumnos != null)
+            {
+                cargaAlumnos();
+            }
         }
 
         // Método para cargar los alumnos en el ListView
@@ -165,7 +171,7 @@ namespace ProjectStore
         }
 
         // Evento para visualizar los proyectos
-        private void verProyectosToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void verProyectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
@@ -182,8 +188,11 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Comentarios", 100);
             ltvListaPrincipal.Columns.Add("Ciclo", 35);
             ltvListaPrincipal.Columns.Add("Tutor", 35);
-            //proyectos = funcion de la api que devuelve los proyectos;
-            cargaProyectos();
+            proyectos = await new ConexionApi().ObtenerProyectos();
+            if (proyectos != null)
+            {
+                cargaProyectos();
+            }
         }
 
         // Método para cargar los proyectos en el ListView
@@ -212,8 +221,6 @@ namespace ProjectStore
         // Evento para cerrar sesión
         private void OnClickLogout(object sender, EventArgs e)
         {
-            email = null;
-
             // Abre el formulario principal en un hilo separado para evitar bloquear la UI
             Thread thread = new Thread(() =>
             {

@@ -63,7 +63,7 @@ namespace ProjectStore
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.EnableVisualStyles();
 
-                    Principal principal = new Principal(email);
+                    Principal principal = new Principal(profesor);
                     Application.Run(principal);
                 });
 

@@ -1,25 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\",
+  "WorkspaceRootPath": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|c:\\users\\usuario\\desktop\\mini_reto_di\\projectstore\\projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam2\\desktop\\mini_reto_di\\projectstore\\projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|c:\\users\\usuario\\desktop\\mini_reto_di\\projectstore\\projectstore\\clases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam2\\desktop\\mini_reto_di\\projectstore\\projectstore\\clases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\clases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|c:\\users\\usuario\\desktop\\mini_reto_di\\projectstore\\projectstore\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam2\\desktop\\mini_reto_di\\projectstore\\projectstore\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\projectstore\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam2\\desktop\\mini_reto_di\\projectstore\\projectstore\\configuration\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\configuration\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\projectstore\\modprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\modprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\projectstore\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -30,70 +38,90 @@
       "DocumentGroups": [
         {
           "DockedWidth": 327,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ModProfesor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProfesor.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\ModProfesor.cs",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProfesor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ProjectStore\\ModProfesor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T16:02:38.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConexionApi.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Configuration\\ConexionApi.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\Configuration\\ConexionApi.cs",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Configuration\\ConexionApi.cs",
+              "RelativeToolTip": "ProjectStore\\Configuration\\ConexionApi.cs",
+              "ViewState": "AQIAANMAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T16:01:20.622Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Clases.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Clases.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Clases.cs",
               "RelativeDocumentMoniker": "ProjectStore\\Clases.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Clases.cs",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Clases.cs",
               "RelativeToolTip": "ProjectStore\\Clases.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAqwEQAAABBAAAAAAAAAA==",
+              "ViewState": "AQIAACcAAAAAAAAAAAAiwDYAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T12:20:59.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Login.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Login.cs",
               "RelativeDocumentMoniker": "ProjectStore\\Login.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Login.cs",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Login.cs",
               "RelativeToolTip": "ProjectStore\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowEAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T12:12:37.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Login.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Login.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Login.cs",
               "RelativeDocumentMoniker": "ProjectStore\\Login.cs",
               "ToolTip": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Login.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ProjectStore\\Login.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T12:12:35.892Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-26T12:12:35.892Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Principal.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
               "RelativeDocumentMoniker": "ProjectStore\\Principal.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
               "RelativeToolTip": "ProjectStore\\Principal.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wBUAAAANAAAAAAAAAA==",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAcwCEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T12:06:36.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
+              "DocumentMoniker": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
               "RelativeDocumentMoniker": "ProjectStore\\Principal.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs [Dise\u00F1o]",
+              "ToolTip": "D:\\Usuarios\\dam2\\Desktop\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs [Dise\u00F1o]",
               "RelativeToolTip": "ProjectStore\\Principal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T12:06:34.03Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-26T12:06:34.03Z"
             }
           ]
         }
