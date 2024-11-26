@@ -63,7 +63,7 @@ namespace ProjectStore
                     {
                         proyecto.Tutor = Principal.profesores[cmbTutor.SelectedIndex];
                     }
-                    //funcion update
+                    
 
                 }
 

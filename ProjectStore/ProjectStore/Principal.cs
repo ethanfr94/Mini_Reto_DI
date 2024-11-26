@@ -12,35 +12,29 @@ namespace ProjectStore
         public static List<Ciclo> ciclos;
 
         // Variable para almacenar el correo del usuario que inició sesión        
+        Profesor prof = null;
 
         public Principal(Profesor p)
         {
             InitializeComponent();
-            Profesor prof = p;
+            prof = p;
             this.Text = prof.Nombre + " " + prof.Apellidos;
-            esAdmin(p);   
+            esAdmin(p);            
             
-
         }
 
         private void esAdmin(Profesor p)
         {
-            if (!p.Admin)
+            if (p.Admin)
             {
-                if(ltvListaPrincipal.SelectedItems[0].SubItems[11].Text == p.Id)
-                {                    
-                    modificarProyectosToolStripMenuItem.Visible = true;
-                }             
-            }
-            else
-            {
-                addAlumnoToolStripMenuItem.Visible = true;
+                 addAlumnoToolStripMenuItem.Visible = true;
                 addProfesorToolStripMenuItem.Visible = true;
                 addProyectosToolStripMenuItem.Visible = true;
                 modificarAlumnoToolStripMenuItem.Visible = true;
                 modificarProfesorToolStripMenuItem.Visible = true;
-                modificarProyectosToolStripMenuItem.Visible = true;
+                modificarProyectosToolStripMenuItem.Visible = true;          
             }
+            
         }
 
         // Evento para visualizar los ciclos
@@ -55,8 +49,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Titulo", 100);
             ltvListaPrincipal.Columns.Add("Curriculo", 100);
             ltvListaPrincipal.Columns.Add("Familia", 100);
-
-            //ciclos = funcion de la api que devuelve los ciclos;
+            ciclos = await new ConexionApi().ObtenerCiclos();
             cargaCiclo();
         }
 
@@ -110,7 +103,6 @@ namespace ProjectStore
             foreach (Profesor profesor in profesores)
             {
                 ListViewItem item = new ListViewItem(profesor.Id);
-
                 item.SubItems.Add(profesor.Nombre);
                 item.SubItems.Add(profesor.Apellidos);
                 item.SubItems.Add(profesor.Dni);
@@ -157,6 +149,7 @@ namespace ProjectStore
             foreach (Alumno alumno in alumnos)
             {
                 ListViewItem item = new ListViewItem(alumno.Id);
+
                 item.SubItems.Add(alumno.Nombre);
                 item.SubItems.Add(alumno.Apellidos);
                 item.SubItems.Add(alumno.Dni);
@@ -189,6 +182,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Ciclo", 35);
             ltvListaPrincipal.Columns.Add("Tutor", 35);
             proyectos = await new ConexionApi().ObtenerProyectos();
+            
             if (proyectos != null)
             {
                 cargaProyectos();
@@ -265,7 +259,7 @@ namespace ProjectStore
             addProyecto.ShowDialog();
         }
 
-        private void modificarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void modificarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Profesor profesor;
             foreach (Profesor p in profesores)
@@ -280,12 +274,12 @@ namespace ProjectStore
             if (DialogResult == DialogResult.OK)
             {
                
-                //profesores = funcion de la api que devuelve los profesores;
+                profesores = await new ConexionApi().ObtenerProfesor();
                 cargaProfesores();
             }
         }
 
-        private void modificarAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void modificarAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Alumno al in alumnos)
             {
@@ -297,11 +291,11 @@ namespace ProjectStore
             }
             if (DialogResult == DialogResult.OK)
             {
-                //alumnos = funcion de la api que devuelve los alumnos;
+                alumnos = await new ConexionApi().ObtenerAlumnos();
                 cargaAlumnos();
             }
         }
-        private void modificarProyectosToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void modificarProyectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Proyecto p in proyectos)
             {
@@ -313,7 +307,7 @@ namespace ProjectStore
             }
             if (DialogResult == DialogResult.OK)
             {
-                //proyectos = funcion de la api que devuelve los proyectos;
+                proyectos = await new ConexionApi().ObtenerProyectos();
                 cargaProyectos();
             }
         }
@@ -321,8 +315,9 @@ namespace ProjectStore
         // evento que habilita los botones de modificacion al seleccionar un elemento de la lista
         private void ltvListaPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ltvListaPrincipal.SelectedItems.Count > 0)
+            if (ltvListaPrincipal.SelectedItems.Count > 0 && ltvListaPrincipal.SelectedItems[0].SubItems[11].Text == prof.Id || prof.Admin)
             {
+                       
                 modificarAlumnoToolStripMenuItem.Enabled = true;
                 modificarProfesorToolStripMenuItem.Enabled = true;
                 modificarProyectosToolStripMenuItem.Enabled = true;
