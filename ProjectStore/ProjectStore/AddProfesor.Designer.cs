@@ -63,7 +63,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(154, 286);
+            btnAdd.Location = new Point(154, 283);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(90, 23);
             btnAdd.TabIndex = 57;
@@ -81,6 +81,7 @@
             // 
             // cmbGenero
             // 
+            cmbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGenero.FormattingEnabled = true;
             cmbGenero.Location = new Point(154, 187);
             cmbGenero.Name = "cmbGenero";
@@ -100,6 +101,7 @@
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(199, 23);
             txtContraseña.TabIndex = 52;
+            txtContraseña.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 
