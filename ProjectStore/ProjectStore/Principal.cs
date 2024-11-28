@@ -103,7 +103,7 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Activo", 50);
             ltvListaPrincipal.Columns.Add("Admin", 50);
 
-            
+
             cargaProfesores();
         }
 
@@ -258,12 +258,12 @@ namespace ProjectStore
 
             AddAlumno addAlumno = new AddAlumno();
             addAlumno.ShowDialog();
-            
+
             if (addAlumno.IsDisposed)
             {
                 cargaAlumnos();
             }
-            
+
         }
 
         // Método para abrir formulario de profesor
@@ -271,12 +271,12 @@ namespace ProjectStore
         {
             AddProfesor addProfesor = new AddProfesor();
             addProfesor.ShowDialog();
-            
+
             if (addProfesor.IsDisposed)
             {
                 cargaProfesores();
             }
-            
+
         }
 
         // Método para abrir formulario de proyecto
@@ -285,11 +285,11 @@ namespace ProjectStore
             AddProyecto addProyecto = new AddProyecto();
             addProyecto.ShowDialog();
 
-            if(addProyecto.IsDisposed)
+            if (addProyecto.IsDisposed)
             {
                 cargaProyectos();
             }
-            
+
         }
         /*
         // Método genérico para modificar un elemento (Profesor, Alumno o Proyecto)
@@ -325,7 +325,7 @@ namespace ProjectStore
                 {
                     cargaProfesores();
                 }
-                
+
             }
 
 
@@ -371,8 +371,8 @@ namespace ProjectStore
                 {
                     cargaAlumnos();
                 }
-                
-                
+
+
             }
 
             /*
@@ -417,9 +417,10 @@ namespace ProjectStore
                 {
                     cargaProyectos();
                 }
-                
-                
-            } else
+
+
+            }
+            else
             {
                 MessageBox.Show("Por favor, selecciona un proyecto para modificar.",
                                 "Atención",
@@ -496,6 +497,105 @@ namespace ProjectStore
 
         }
 
-        
+        private async void subirArchivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ltvListaPrincipal.SelectedItems.Count > 0)
+            {
+
+                int id = Convert.ToInt32(ltvListaPrincipal.SelectedItems[0].SubItems[0].Text);
+
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Selecciona un archivo";
+                ofd.ShowDialog();
+
+                string path = ofd.FileName;
+
+                bool res = await apiConnection.Upload(id, path);
+
+                if (res)
+                {
+                    MessageBox.Show("Archivo subido correctamente",
+                                    "Exito",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al subir el archivo",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+
+                }
+
+            }
+
+        }
+
+        private async void borrarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(ltvListaPrincipal.SelectedItems[0].SubItems[0].Text);
+
+            bool res = await apiConnection.DeleteProyecto(id);
+            if (res)
+            {
+                MessageBox.Show("Proyecto eliminado correctamente",
+                                "Exito",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                cargaProyectos();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar el proyecto",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        private async void borrarAlumnoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string id = ltvListaPrincipal.SelectedItems[0].SubItems[0].Text;
+
+            bool res = await apiConnection.DeleteAlumno(id);
+            if (res)
+            {
+                MessageBox.Show("Alumno eliminado correctamente",
+                                "Exito",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                cargaProyectos();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar el alumno",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        private async void borrarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string id = ltvListaPrincipal.SelectedItems[0].SubItems[0].Text;
+
+            bool res = await apiConnection.DeleteProfesor(id);
+            if (res)
+            {
+                MessageBox.Show("Profesor eliminado correctamente",
+                                "Exito",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                cargaProyectos();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar el profesor",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
     }
 }

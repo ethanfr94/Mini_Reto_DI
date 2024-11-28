@@ -40,19 +40,25 @@
             tsmiVerAlumnos = new ToolStripMenuItem();
             addAlumnoToolStripMenuItem = new ToolStripMenuItem();
             modificarAlumnoToolStripMenuItem = new ToolStripMenuItem();
+            borrarAlumnoToolStripMenuItem = new ToolStripMenuItem();
             tsmiProyectos = new ToolStripMenuItem();
             tsmiVerProyectos = new ToolStripMenuItem();
             addProyectosToolStripMenuItem = new ToolStripMenuItem();
             modificarProyectosToolStripMenuItem = new ToolStripMenuItem();
+            borrarProyectoToolStripMenuItem = new ToolStripMenuItem();
             tsmiLogOut = new ToolStripMenuItem();
+            archivosToolStripMenuItem = new ToolStripMenuItem();
+            subirArchivoToolStripMenuItem = new ToolStripMenuItem();
+            descargarArchivoToolStripMenuItem = new ToolStripMenuItem();
             ltvListaPrincipal = new ListView();
+            borrarProfesorToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.ControlLightLight;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { tsmiCiclos, txmiProfesores, tsmiAlumnos, tsmiProyectos, tsmiLogOut });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { tsmiCiclos, txmiProfesores, tsmiAlumnos, tsmiProyectos, tsmiLogOut, archivosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(722, 24);
@@ -75,7 +81,7 @@
             // 
             // txmiProfesores
             // 
-            txmiProfesores.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerProfesores, addProfesorToolStripMenuItem, modificarProfesorToolStripMenuItem });
+            txmiProfesores.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerProfesores, addProfesorToolStripMenuItem, modificarProfesorToolStripMenuItem, borrarProfesorToolStripMenuItem });
             txmiProfesores.Name = "txmiProfesores";
             txmiProfesores.Size = new Size(74, 20);
             txmiProfesores.Text = "Profesores";
@@ -83,14 +89,14 @@
             // tsmiVerProfesores
             // 
             tsmiVerProfesores.Name = "tsmiVerProfesores";
-            tsmiVerProfesores.Size = new Size(172, 22);
+            tsmiVerProfesores.Size = new Size(180, 22);
             tsmiVerProfesores.Text = "Ver Profesores";
             tsmiVerProfesores.Click += tsmiVerProfesores_Click;
             // 
             // addProfesorToolStripMenuItem
             // 
             addProfesorToolStripMenuItem.Name = "addProfesorToolStripMenuItem";
-            addProfesorToolStripMenuItem.Size = new Size(172, 22);
+            addProfesorToolStripMenuItem.Size = new Size(180, 22);
             addProfesorToolStripMenuItem.Text = "Añadir Profesor";
             addProfesorToolStripMenuItem.Visible = false;
             addProfesorToolStripMenuItem.Click += añadirProfesorToolStripMenuItem_Click;
@@ -98,14 +104,14 @@
             // modificarProfesorToolStripMenuItem
             // 
             modificarProfesorToolStripMenuItem.Name = "modificarProfesorToolStripMenuItem";
-            modificarProfesorToolStripMenuItem.Size = new Size(172, 22);
+            modificarProfesorToolStripMenuItem.Size = new Size(180, 22);
             modificarProfesorToolStripMenuItem.Text = "Modificar Profesor";
             modificarProfesorToolStripMenuItem.Visible = false;
             modificarProfesorToolStripMenuItem.Click += modificarProfesorToolStripMenuItem_Click;
             // 
             // tsmiAlumnos
             // 
-            tsmiAlumnos.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerAlumnos, addAlumnoToolStripMenuItem, modificarAlumnoToolStripMenuItem });
+            tsmiAlumnos.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerAlumnos, addAlumnoToolStripMenuItem, modificarAlumnoToolStripMenuItem, borrarAlumnoToolStripMenuItem });
             tsmiAlumnos.Name = "tsmiAlumnos";
             tsmiAlumnos.Size = new Size(67, 20);
             tsmiAlumnos.Text = "Alumnos";
@@ -113,14 +119,14 @@
             // tsmiVerAlumnos
             // 
             tsmiVerAlumnos.Name = "tsmiVerAlumnos";
-            tsmiVerAlumnos.Size = new Size(171, 22);
+            tsmiVerAlumnos.Size = new Size(180, 22);
             tsmiVerAlumnos.Text = "Ver Alumnos";
             tsmiVerAlumnos.Click += tsmiVerAlumnos_Click;
             // 
             // addAlumnoToolStripMenuItem
             // 
             addAlumnoToolStripMenuItem.Name = "addAlumnoToolStripMenuItem";
-            addAlumnoToolStripMenuItem.Size = new Size(171, 22);
+            addAlumnoToolStripMenuItem.Size = new Size(180, 22);
             addAlumnoToolStripMenuItem.Text = "Añadir Alumno";
             addAlumnoToolStripMenuItem.Visible = false;
             addAlumnoToolStripMenuItem.Click += añadirAlumnoToolStripMenuItem_Click;
@@ -128,14 +134,21 @@
             // modificarAlumnoToolStripMenuItem
             // 
             modificarAlumnoToolStripMenuItem.Name = "modificarAlumnoToolStripMenuItem";
-            modificarAlumnoToolStripMenuItem.Size = new Size(171, 22);
+            modificarAlumnoToolStripMenuItem.Size = new Size(180, 22);
             modificarAlumnoToolStripMenuItem.Text = "Modificar Alumno";
             modificarAlumnoToolStripMenuItem.Visible = false;
             modificarAlumnoToolStripMenuItem.Click += modificarAlumnoToolStripMenuItem_Click;
             // 
+            // borrarAlumnoToolStripMenuItem
+            // 
+            borrarAlumnoToolStripMenuItem.Name = "borrarAlumnoToolStripMenuItem";
+            borrarAlumnoToolStripMenuItem.Size = new Size(180, 22);
+            borrarAlumnoToolStripMenuItem.Text = "Borrar alumno";
+            borrarAlumnoToolStripMenuItem.Click += borrarAlumnoToolStripMenuItem1_Click;
+            // 
             // tsmiProyectos
             // 
-            tsmiProyectos.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerProyectos, addProyectosToolStripMenuItem, modificarProyectosToolStripMenuItem });
+            tsmiProyectos.DropDownItems.AddRange(new ToolStripItem[] { tsmiVerProyectos, addProyectosToolStripMenuItem, modificarProyectosToolStripMenuItem, borrarProyectoToolStripMenuItem });
             tsmiProyectos.Name = "tsmiProyectos";
             tsmiProyectos.Size = new Size(71, 20);
             tsmiProyectos.Text = "Proyectos";
@@ -143,14 +156,14 @@
             // tsmiVerProyectos
             // 
             tsmiVerProyectos.Name = "tsmiVerProyectos";
-            tsmiVerProyectos.Size = new Size(175, 22);
+            tsmiVerProyectos.Size = new Size(180, 22);
             tsmiVerProyectos.Text = "Ver Proyectos";
             tsmiVerProyectos.Click += verProyectosToolStripMenuItem_Click;
             // 
             // addProyectosToolStripMenuItem
             // 
             addProyectosToolStripMenuItem.Name = "addProyectosToolStripMenuItem";
-            addProyectosToolStripMenuItem.Size = new Size(175, 22);
+            addProyectosToolStripMenuItem.Size = new Size(180, 22);
             addProyectosToolStripMenuItem.Text = "Añadir Proyecto";
             addProyectosToolStripMenuItem.Visible = false;
             addProyectosToolStripMenuItem.Click += añadirProyectosToolStripMenuItem_Click;
@@ -158,10 +171,17 @@
             // modificarProyectosToolStripMenuItem
             // 
             modificarProyectosToolStripMenuItem.Name = "modificarProyectosToolStripMenuItem";
-            modificarProyectosToolStripMenuItem.Size = new Size(175, 22);
+            modificarProyectosToolStripMenuItem.Size = new Size(180, 22);
             modificarProyectosToolStripMenuItem.Text = "Modificar Proyecto";
             modificarProyectosToolStripMenuItem.Visible = false;
             modificarProyectosToolStripMenuItem.Click += modificarProyectosToolStripMenuItem_Click;
+            // 
+            // borrarProyectoToolStripMenuItem
+            // 
+            borrarProyectoToolStripMenuItem.Name = "borrarProyectoToolStripMenuItem";
+            borrarProyectoToolStripMenuItem.Size = new Size(180, 22);
+            borrarProyectoToolStripMenuItem.Text = "Borrar proyecto";
+            borrarProyectoToolStripMenuItem.Click += borrarProyectoToolStripMenuItem_Click;
             // 
             // tsmiLogOut
             // 
@@ -169,6 +189,26 @@
             tsmiLogOut.Size = new Size(88, 20);
             tsmiLogOut.Text = "Cerrar Sesion";
             tsmiLogOut.Click += OnClickLogout;
+            // 
+            // archivosToolStripMenuItem
+            // 
+            archivosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { subirArchivoToolStripMenuItem, descargarArchivoToolStripMenuItem });
+            archivosToolStripMenuItem.Name = "archivosToolStripMenuItem";
+            archivosToolStripMenuItem.Size = new Size(65, 20);
+            archivosToolStripMenuItem.Text = "Archivos";
+            // 
+            // subirArchivoToolStripMenuItem
+            // 
+            subirArchivoToolStripMenuItem.Name = "subirArchivoToolStripMenuItem";
+            subirArchivoToolStripMenuItem.Size = new Size(168, 22);
+            subirArchivoToolStripMenuItem.Text = "Subir archivo";
+            subirArchivoToolStripMenuItem.Click += subirArchivoToolStripMenuItem_Click;
+            // 
+            // descargarArchivoToolStripMenuItem
+            // 
+            descargarArchivoToolStripMenuItem.Name = "descargarArchivoToolStripMenuItem";
+            descargarArchivoToolStripMenuItem.Size = new Size(168, 22);
+            descargarArchivoToolStripMenuItem.Text = "Descargar archivo";
             // 
             // ltvListaPrincipal
             // 
@@ -183,6 +223,13 @@
             ltvListaPrincipal.UseCompatibleStateImageBehavior = false;
             ltvListaPrincipal.View = View.Details;
             ltvListaPrincipal.ItemSelectionChanged += ltvListaPrincipal_ItemSelectionChanged;
+            // 
+            // borrarProfesorToolStripMenuItem
+            // 
+            borrarProfesorToolStripMenuItem.Name = "borrarProfesorToolStripMenuItem";
+            borrarProfesorToolStripMenuItem.Size = new Size(180, 22);
+            borrarProfesorToolStripMenuItem.Text = "Borrar profesor";
+            borrarProfesorToolStripMenuItem.Click += borrarProfesorToolStripMenuItem_Click;
             // 
             // Principal
             // 
@@ -224,5 +271,11 @@
         private ToolStripMenuItem addProfesorToolStripMenuItem;
         private ToolStripMenuItem modificarProfesorToolStripMenuItem;
         private ListView ltvListaPrincipal;
+        private ToolStripMenuItem archivosToolStripMenuItem;
+        private ToolStripMenuItem subirArchivoToolStripMenuItem;
+        private ToolStripMenuItem descargarArchivoToolStripMenuItem;
+        private ToolStripMenuItem borrarProyectoToolStripMenuItem;
+        private ToolStripMenuItem borrarAlumnoToolStripMenuItem;
+        private ToolStripMenuItem borrarProfesorToolStripMenuItem;
     }
 }

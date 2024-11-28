@@ -273,7 +273,7 @@ namespace ProjectStore
             }
         }
 
-        public async Task<String> GetLogo(int id_proyecto, string etapa_proyecto)
+        public async Task<String> Download(int id_proyecto, string etapa_proyecto)
         {
             try
             {
@@ -289,13 +289,59 @@ namespace ProjectStore
                 return null;
             }
         }
-        public async Task<bool> ModLogo(int id_proyecto)
+        public async Task<bool> Upload(int id_proyecto, string rutaFichero)
         {
             try
             {
-                string jsonData = JsonConvert.SerializeObject(id_proyecto);
+                string jsonData = JsonConvert.SerializeObject(rutaFichero);
                 StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/proyectos/ficheros?idProyecto={id_proyecto}", content);
+                response.EnsureSuccessStatusCode();
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al enviar la solicitud: " + e.Message);
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteProyecto(int id)
+        {
+            try
+            {
+                string url = $"http://localhost:4000/proyectos/{id}";
+                HttpResponseMessage response = await client.DeleteAsync(url);
+                response.EnsureSuccessStatusCode();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteProfesor(string id)
+        {
+            try
+            {
+                string url = $"http://localhost:4000/profesores/{id}";
+                HttpResponseMessage response = await client.DeleteAsync(url);
+                response.EnsureSuccessStatusCode();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteAlumno(string id)
+        {
+            try
+            {
+                string url = $"http://localhost:4000/alumnos/{id}";
+                HttpResponseMessage response = await client.DeleteAsync(url);
                 response.EnsureSuccessStatusCode();
                 return true;
             }
