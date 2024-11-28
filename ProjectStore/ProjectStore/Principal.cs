@@ -258,8 +258,8 @@ namespace ProjectStore
             AddAlumno addAlumno = new AddAlumno();
             addAlumno.ShowDialog();
             
-                alumnos = apiConnection.GetAllAlumnos().Result;
-                cargaAlumnos();
+                /*alumnos = apiConnection.GetAllAlumnos().Result;
+                cargaAlumnos();*/
             
         }
 
@@ -269,8 +269,6 @@ namespace ProjectStore
             AddProfesor addProfesor = new AddProfesor();
             addProfesor.ShowDialog();
             
-                profesores = apiConnection.GetAllProfesores().Result;
-                cargaProfesores();
             
         }
 
@@ -279,9 +277,6 @@ namespace ProjectStore
         {
             AddProyecto addProyecto = new AddProyecto();
             addProyecto.ShowDialog();
-            
-                proyectos = apiConnection.GetAllProyectos().Result;
-                cargaProyectos();
             
         }
         /*
@@ -313,11 +308,7 @@ namespace ProjectStore
 
                 ModProfesor modProfesor = new ModProfesor(profesor);
                 modProfesor.ShowDialog();
-                if (modProfesor.DialogResult == DialogResult.OK)
-                {
-                    profesores = await apiConnection.GetAllProfesores();
-                    cargaProfesores();
-                }
+                
             }
 
 
@@ -358,11 +349,8 @@ namespace ProjectStore
 
                 ModAlumno modAlumno = new ModAlumno(alumno);
                 modAlumno.ShowDialog();
-                if (modAlumno.DialogResult == DialogResult.OK)
-                {
-                    alumnos = await apiConnection.GetAllAlumnos();
-                    cargaAlumnos();
-                }
+                
+                
             }
 
             /*
@@ -402,11 +390,8 @@ namespace ProjectStore
 
                 ModProyecto modProyecto = new ModProyecto(proyecto);
                 modProyecto.ShowDialog();
-                if (modProyecto.DialogResult == DialogResult.OK)
-                {
-                    proyectos = await apiConnection.GetAllProyectos();
-                    cargaProyectos();
-                }
+                
+                
             } else
             {
                 MessageBox.Show("Por favor, selecciona un proyecto para modificar.",
