@@ -227,8 +227,8 @@ namespace ProjectStore
                 string comentarios = string.IsNullOrEmpty(proyecto.Comentarios) ? "No Disponible" : proyecto.Comentarios;
                 item.SubItems.Add(comentarios);
 
-                item.SubItems.Add(proyecto.Ciclo.ToString());
-                item.SubItems.Add(proyecto.Tutor.ToString());
+                item.SubItems.Add(proyecto.Ciclo.Nombre);
+                item.SubItems.Add(proyecto.Tutor.Id);
 
                 ltvListaPrincipal.Items.Add(item);
             }
