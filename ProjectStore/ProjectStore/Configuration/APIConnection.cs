@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -62,9 +61,9 @@ namespace ProjectStore
         }
 
         // Actualiza un alumno.
-        public async Task<bool> UpdateAlumno(string id, Alumno alumno)
+        public async Task<bool> UpdateAlumno(Alumno alumno)
         {
-            return await UpdateEntity($"http://localhost:4000/actualizarAlumno{id}", alumno);
+            return await UpdateEntity($"http://localhost:4000/alumnos/{alumno}", alumno);
         }
 
         // ===== Métodos de Profesor =====
@@ -130,9 +129,9 @@ namespace ProjectStore
         }
 
         // Actualiza un profesor.
-        public async Task<bool> UpdateProfesor(string id, Profesor profesor)
+        public async Task<bool> UpdateProfesor(Profesor profesor)
         {
-            return await UpdateEntity($"http://localhost:4000/actualizarProfesor{id}", profesor);
+            return await UpdateEntity($"http://localhost:4000/profesores/{profesor}", profesor);
         }
 
         // ===== Métodos de Ciclo =====
@@ -233,9 +232,9 @@ namespace ProjectStore
         }
 
         // Actualiza un proyecto.
-        public async Task<bool> UpdateProyecto(int id, Proyecto proyecto)
+        public async Task<bool> UpdateProyecto(Proyecto proyecto)
         {
-            return await UpdateEntity($"http://localhost:4000/actualizarProyecto{id}", proyecto);
+            return await UpdateEntity($"http://localhost:4000/proyectos/{proyecto}", proyecto);
         }
 
         // ===== Métodos Genéricos =====
@@ -258,30 +257,13 @@ namespace ProjectStore
         }
 
         // Método genérico para insertar una entidad.
-
-        public async Task<String> GetLogo(int id_proyecto, string etapa_proyecto)
+        private async Task<bool> PostEntity<T>(string url, T entidad)
         {
             try
             {
-                string url = $"http://localhost:4000/proyectos/ficheros?idProyecto={id_proyecto}&tipo={etapa_proyecto}";
-                HttpResponseMessage response = await client.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-
-                string responseJson = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<String>(responseJson) ;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-        public async Task<bool> ModLogo(int id_proyecto)
-        {
-            try
-            {
-                string jsonData = JsonConvert.SerializeObject(id_proyecto);
+                string jsonData = JsonConvert.SerializeObject(entidad);
                 StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/proyectos/ficheros?idProyecto={id_proyecto}", content);
+                HttpResponseMessage response = await client.PostAsync(url, content);
                 response.EnsureSuccessStatusCode();
                 return true;
             }
