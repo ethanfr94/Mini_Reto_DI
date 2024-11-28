@@ -273,5 +273,37 @@ namespace ProjectStore
             }
         }
 
+        public async Task<String> GetLogo(int id_proyecto, string etapa_proyecto)
+        {
+            try
+            {
+                string url = $"http://localhost:4000/proyectos/ficheros?idProyecto={id_proyecto}&tipo={etapa_proyecto}";
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<String>(responseJson);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public async Task<bool> ModLogo(int id_proyecto)
+        {
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(id_proyecto);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:4000/proyectos/ficheros?idProyecto={id_proyecto}", content);
+                response.EnsureSuccessStatusCode();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }
