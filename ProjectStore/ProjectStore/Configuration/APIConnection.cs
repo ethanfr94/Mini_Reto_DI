@@ -232,9 +232,9 @@ namespace ProjectStore
         }
 
         // Actualiza un proyecto.
-        public async Task<bool> UpdateProyecto(int id, Proyecto proyecto)
+        public async Task<bool> UpdateProyecto(Proyecto proyecto)
         {
-            return await UpdateEntity($"http://localhost:4000/actualizarProyecto{id}", proyecto);
+            return await UpdateEntity($"http://localhost:4000/proyectos/{proyecto}", proyecto);
         }
 
         // ===== Métodos Genéricos =====
