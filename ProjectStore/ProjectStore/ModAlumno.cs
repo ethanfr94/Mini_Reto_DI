@@ -59,7 +59,7 @@ namespace ProjectStore
             if (alumno.Telefono != txtTelefono.Text) alumno.Telefono = txtTelefono.Text;
             if (alumno.Activo != chkActivo.Checked) alumno.Activo = chkActivo.Checked;
 
-            bool res = await apiConnection.UpdateAlumno(alumno.Id, alumno);
+            bool res = await apiConnection.UpdateAlumno(alumno);
 
             if (res)
             {

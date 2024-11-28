@@ -61,9 +61,9 @@ namespace ProjectStore
         }
 
         // Actualiza un alumno.
-        public async Task<bool> UpdateAlumno(string id, Alumno alumno)
+        public async Task<bool> UpdateAlumno(Alumno alumno)
         {
-            return await UpdateEntity($"http://localhost:4000/actualizarAlumno{id}", alumno);
+            return await UpdateEntity($"http://localhost:4000/alumnos/{alumno}", alumno);
         }
 
         // ===== Métodos de Profesor =====
@@ -129,9 +129,9 @@ namespace ProjectStore
         }
 
         // Actualiza un profesor.
-        public async Task<bool> UpdateProfesor(string id, Profesor profesor)
+        public async Task<bool> UpdateProfesor(Profesor profesor)
         {
-            return await UpdateEntity($"http://localhost:4000/actualizarProfesor{id}", profesor);
+            return await UpdateEntity($"http://localhost:4000/profesores/{profesor}", profesor);
         }
 
         // ===== Métodos de Ciclo =====
