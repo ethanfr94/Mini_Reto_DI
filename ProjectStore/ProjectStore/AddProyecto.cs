@@ -15,7 +15,6 @@ namespace ProjectStore
         {
             InitializeComponent();
             cargaComboCiclo();
-            cargaComboTipo();
             cargaComboProfesor();
         }
 
@@ -25,15 +24,6 @@ namespace ProjectStore
             foreach (Ciclo ciclo in Principal.ciclos)
             {
                 cmbCiclo.Items.Add(ciclo.Nombre);
-            }
-        }
-
-        // Carga los tipos de proyecto disponibles en el combo
-        private void cargaComboTipo()
-        {
-            foreach (Tipo tipo in Enum.GetValues(typeof(Tipo)))
-            {
-                cmbTipo.Items.Add(tipo);
             }
         }
 
@@ -95,7 +85,7 @@ namespace ProjectStore
             Proyecto p = new Proyecto
             {
                 Nombre = txtNombre.Text,
-                Tipo = (Tipo) cmbTipo.SelectedItem,
+                Tipo = cmbTipo.SelectedText,
                 Resumen = txtResumen.Text,
                 AnioAcademico = (int)nudAnioAcademico.Value,
                 FechaPresentacion = dtpFechaPres.Value,

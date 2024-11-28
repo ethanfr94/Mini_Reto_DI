@@ -26,6 +26,11 @@ namespace ProjectStore
             esAdmin(p);
         }
 
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            verProyectosToolStripMenuItem_Click(sender, e);
+        }
+
         // Verifica si el profesor tiene permisos de administrador
         private void esAdmin(Profesor p)
         {
@@ -189,27 +194,37 @@ namespace ProjectStore
 
             proyectos = await apiConnection.GetAllProyectos();
 
-
             cargaProyectos();
         }
 
-        // Método para cargar los proyectos en el ListView
         public void cargaProyectos()
         {
             ltvListaPrincipal.Items.Clear();
+
             foreach (Proyecto proyecto in proyectos)
             {
-                ListViewItem item = new ListViewItem(proyecto.Id);
+                ListViewItem item = new ListViewItem(proyecto.Id.ToString());
 
                 item.SubItems.Add(proyecto.Nombre);
-                item.SubItems.Add(proyecto.Tipo.ToString());
+                item.SubItems.Add(proyecto.Tipo);
                 item.SubItems.Add(proyecto.Resumen);
-                item.SubItems.Add(proyecto.AnioAcademico.ToString());
-                item.SubItems.Add(proyecto.FechaPresentacion.ToString());
-                item.SubItems.Add(proyecto.Logo);
-                item.SubItems.Add(proyecto.Memoria);
-                item.SubItems.Add(proyecto.Archivos);
-                item.SubItems.Add(proyecto.Comentarios);
+                item.SubItems.Add(proyecto.AnioAcademico?.ToString() ?? "No Disponible");
+
+                string fechaPresentacion = proyecto.FechaPresentacion?.ToString("dd/MM/yyyy") ?? "Fecha no disponible";
+                item.SubItems.Add(fechaPresentacion);
+
+                string logo = string.IsNullOrEmpty(proyecto.Logo) ? "No Disponible" : proyecto.Logo;
+                item.SubItems.Add(logo);
+
+                string memoria = string.IsNullOrEmpty(proyecto.Memoria) ? "No Disponible" : proyecto.Memoria;
+                item.SubItems.Add(memoria);
+
+                string archivos = string.IsNullOrEmpty(proyecto.Archivos) ? "No Disponible" : proyecto.Archivos;
+                item.SubItems.Add(archivos);
+
+                string comentarios = string.IsNullOrEmpty(proyecto.Comentarios) ? "No Disponible" : proyecto.Comentarios;
+                item.SubItems.Add(comentarios);
+
                 item.SubItems.Add(proyecto.Ciclo.ToString());
                 item.SubItems.Add(proyecto.Tutor.ToString());
 
@@ -384,7 +399,7 @@ namespace ProjectStore
             if (ltvListaPrincipal.SelectedItems.Count > 0)
             {
                 var id = ltvListaPrincipal.SelectedItems[0].SubItems[0].Text;
-                Proyecto proyecto = proyectos.Find(p => p.Id == id);
+                Proyecto proyecto = proyectos.Find(p => p.Id.ToString() == id);
 
                 ModProyecto modProyecto = new ModProyecto(proyecto);
                 modProyecto.ShowDialog();
@@ -421,43 +436,43 @@ namespace ProjectStore
             }
             */
         }
-/*
-        // Evento que habilita los botones de modificación al seleccionar un elemento de la lista
-        private void ltvListaPrincipal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-                String id2 = ltvListaPrincipal.SelectedIndexChanged
-                string id = ltvListaPrincipal.SelectedItems[0].Text;
-
-                if (ltvListaPrincipal.SelectedItems.Count > 0)
+        /*
+                // Evento que habilita los botones de modificación al seleccionar un elemento de la lista
+                private void ltvListaPrincipal_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    if (profesor.Admin)
+                    try
                     {
-                        modificarAlumnoToolStripMenuItem.Enabled = true;
-                        modificarProfesorToolStripMenuItem.Enabled = true;
-                        modificarProyectosToolStripMenuItem.Enabled = true;
-                    }
-                    else
-                    {
-                        Proyecto proyecto = proyectos.Find(p => p.Id == id);
-                        if (proyecto != null && proyecto.Tutor.Id == profesor.Id)
+
+                        String id2 = ltvListaPrincipal.SelectedIndexChanged
+                        string id = ltvListaPrincipal.SelectedItems[0].Text;
+
+                        if (ltvListaPrincipal.SelectedItems.Count > 0)
                         {
-                            modificarProyectosToolStripMenuItem.Enabled = true;
+                            if (profesor.Admin)
+                            {
+                                modificarAlumnoToolStripMenuItem.Enabled = true;
+                                modificarProfesorToolStripMenuItem.Enabled = true;
+                                modificarProyectosToolStripMenuItem.Enabled = true;
+                            }
+                            else
+                            {
+                                Proyecto proyecto = proyectos.Find(p => p.Id == id);
+                                if (proyecto != null && proyecto.Tutor.Id == profesor.Id)
+                                {
+                                    modificarProyectosToolStripMenuItem.Enabled = true;
+                                }
+                            }
                         }
                     }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error al seleccionar un elemento",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al seleccionar un elemento",
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
-        }
-*/
+        */
         private void ltvListaPrincipal_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             try
@@ -475,7 +490,7 @@ namespace ProjectStore
                     }
                     else
                     {
-                        Proyecto proyecto = proyectos.Find(p => p.Id == id);
+                        Proyecto proyecto = proyectos.Find(p => p.Id.ToString() == id);
                         if (proyecto != null && proyecto.Tutor.Id == profesor.Id)
                         {
                             modificarProyectosToolStripMenuItem.Enabled = true;
@@ -485,7 +500,7 @@ namespace ProjectStore
             }
             catch (Exception)
             {
-                
+
             }
 
         }

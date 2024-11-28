@@ -172,16 +172,17 @@
             // 
             // ltvListaPrincipal
             // 
+            ltvListaPrincipal.BorderStyle = BorderStyle.FixedSingle;
+            ltvListaPrincipal.Dock = DockStyle.Fill;
             ltvListaPrincipal.FullRowSelect = true;
             ltvListaPrincipal.GridLines = true;
-            ltvListaPrincipal.Location = new Point(12, 27);
+            ltvListaPrincipal.Location = new Point(0, 24);
             ltvListaPrincipal.Name = "ltvListaPrincipal";
-            ltvListaPrincipal.Size = new Size(698, 358);
+            ltvListaPrincipal.Size = new Size(722, 373);
             ltvListaPrincipal.TabIndex = 8;
             ltvListaPrincipal.UseCompatibleStateImageBehavior = false;
             ltvListaPrincipal.View = View.Details;
             ltvListaPrincipal.ItemSelectionChanged += ltvListaPrincipal_ItemSelectionChanged;
-            //ltvListaPrincipal.SelectedIndexChanged += ltvListaPrincipal_SelectedIndexChanged;
             // 
             // Principal
             // 
@@ -197,6 +198,7 @@
             Name = "Principal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProjectStore | Perfil de Usuario";
+            Load += Principal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
