@@ -107,14 +107,14 @@ namespace ProjectStore
 
             // Cerrar formulario con éxito
             await apiConnection.PostProyecto(p);
-            
-            this.Close();
+
+            this.Dispose();
         }
 
         // Cierra el formulario sin guardar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }

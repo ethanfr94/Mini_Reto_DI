@@ -103,13 +103,14 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Activo", 50);
             ltvListaPrincipal.Columns.Add("Admin", 50);
 
-            profesores = await apiConnection.GetAllProfesores();
+            
             cargaProfesores();
         }
 
         // Método para cargar los profesores en el ListView
-        public void cargaProfesores()
+        public async void cargaProfesores()
         {
+            profesores = await apiConnection.GetAllProfesores();
             ltvListaPrincipal.Items.Clear();
 
             foreach (Profesor profesor in profesores)
@@ -149,13 +150,13 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Fecha de Nacimiento", 100);
             ltvListaPrincipal.Columns.Add("Activo", 50);
 
-            alumnos = await apiConnection.GetAllAlumnos();
             cargaAlumnos();
         }
 
         // Método para cargar los alumnos en el ListView
-        public void cargaAlumnos()
+        public async void cargaAlumnos()
         {
+            alumnos = await apiConnection.GetAllAlumnos();
             ltvListaPrincipal.Items.Clear();
 
             foreach (Alumno alumno in alumnos)
@@ -195,12 +196,12 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Ciclo", 100);
             ltvListaPrincipal.Columns.Add("Tutor", 50);
 
-            proyectos = await apiConnection.GetAllProyectos();
             cargaProyectos();
         }
 
-        public void cargaProyectos()
+        public async void cargaProyectos()
         {
+            proyectos = await apiConnection.GetAllProyectos();
             ltvListaPrincipal.Items.Clear();
 
             foreach (Proyecto proyecto in proyectos)
@@ -258,8 +259,10 @@ namespace ProjectStore
             AddAlumno addAlumno = new AddAlumno();
             addAlumno.ShowDialog();
             
-                /*alumnos = apiConnection.GetAllAlumnos().Result;
-                cargaAlumnos();*/
+            if (addAlumno.IsDisposed)
+            {
+                cargaAlumnos();
+            }
             
         }
 
@@ -269,6 +272,10 @@ namespace ProjectStore
             AddProfesor addProfesor = new AddProfesor();
             addProfesor.ShowDialog();
             
+            if (addProfesor.IsDisposed)
+            {
+                cargaProfesores();
+            }
             
         }
 
@@ -277,6 +284,11 @@ namespace ProjectStore
         {
             AddProyecto addProyecto = new AddProyecto();
             addProyecto.ShowDialog();
+
+            if(addProyecto.IsDisposed)
+            {
+                cargaProyectos();
+            }
             
         }
         /*
@@ -308,6 +320,11 @@ namespace ProjectStore
 
                 ModProfesor modProfesor = new ModProfesor(profesor);
                 modProfesor.ShowDialog();
+
+                if (modProfesor.IsDisposed)
+                {
+                    cargaProfesores();
+                }
                 
             }
 
@@ -349,6 +366,11 @@ namespace ProjectStore
 
                 ModAlumno modAlumno = new ModAlumno(alumno);
                 modAlumno.ShowDialog();
+
+                if (modAlumno.IsDisposed)
+                {
+                    cargaAlumnos();
+                }
                 
                 
             }
@@ -390,6 +412,11 @@ namespace ProjectStore
 
                 ModProyecto modProyecto = new ModProyecto(proyecto);
                 modProyecto.ShowDialog();
+
+                if (modProyecto.IsDisposed)
+                {
+                    cargaProyectos();
+                }
                 
                 
             } else

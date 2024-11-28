@@ -86,7 +86,7 @@ namespace ProjectStore
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            this.Dispose();
         }
 
         // Botón de modificar
@@ -98,7 +98,7 @@ namespace ProjectStore
                 {
                     ModificarProyecto();
                     this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    this.Dispose();
                 }
             }
         }
