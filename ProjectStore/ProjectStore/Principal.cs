@@ -26,9 +26,12 @@ namespace ProjectStore
             esAdmin(p);
         }
 
-        private void Principal_Load(object sender, EventArgs e)
+        private async void Principal_Load(object sender, EventArgs e)
         {
-            verProyectosToolStripMenuItem_Click(sender, e);
+            profesores = await apiConnection.GetAllProfesores();
+            alumnos = await apiConnection.GetAllAlumnos();
+            ciclos = await apiConnection.GetAllCiclos();
+            proyectos = await apiConnection.GetAllProyectos();
         }
 
         // Verifica si el profesor tiene permisos de administrador
@@ -193,7 +196,6 @@ namespace ProjectStore
             ltvListaPrincipal.Columns.Add("Tutor", 50);
 
             proyectos = await apiConnection.GetAllProyectos();
-
             cargaProyectos();
         }
 
@@ -408,33 +410,13 @@ namespace ProjectStore
                     proyectos = await apiConnection.GetAllProyectos();
                     cargaProyectos();
                 }
-            }
-
-            /*
-            // Verificar si hay un elemento seleccionado
-            if (ltvListaPrincipal.SelectedItems.Count > 0)
+            } else
             {
-                var idSeleccionado = ltvListaPrincipal.SelectedItems[0].SubItems[0].Text;
-
-                await ModificarElementoToolStripMenuItem_Click<Proyecto>(
-                    proyectos,
-                    idSeleccionado,
-                    (Proyecto p) => p.Id == idSeleccionado,
-                    (Proyecto p) => new ModProyecto(p),
-                    async () =>
-                    {
-                        proyectos = await apiConnection.GetAllProyectos();
-                        cargaProyectos();
-                    });
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un profesor para modificar.",
+                MessageBox.Show("Por favor, selecciona un proyecto para modificar.",
                                 "Atención",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
             }
-            */
         }
         /*
                 // Evento que habilita los botones de modificación al seleccionar un elemento de la lista

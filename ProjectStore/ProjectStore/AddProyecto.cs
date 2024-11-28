@@ -10,6 +10,7 @@ namespace ProjectStore
     {
         // Expresiones regulares y constantes reutilizables
         private const int MinNombreLength = 1;
+        private readonly APIConnection apiConnection = new APIConnection();
 
         public AddProyecto()
         {
@@ -23,7 +24,7 @@ namespace ProjectStore
         {
             foreach (Ciclo ciclo in Principal.ciclos)
             {
-                cmbCiclo.Items.Add(ciclo.Nombre);
+                cmbCiclo.Items.Add(ciclo.Codigo);
             }
         }
 
@@ -32,7 +33,7 @@ namespace ProjectStore
         {
             foreach (Profesor profesor in Principal.profesores)
             {
-                cmbTutor.Items.Add(profesor.Nombre);
+                cmbTutor.Items.Add(profesor.Nombre + " " + profesor.Apellidos);
             }
         }
 
@@ -74,7 +75,7 @@ namespace ProjectStore
         }
 
         // Guarda los datos del proyecto y lo añade a la lista
-        private void btnAdd_Click(object sender, EventArgs e)
+        private async void btnAdd_Click(object sender, EventArgs e)
         {
             // Validamos si todos los campos requeridos están completos
             if (!ValidarCamposRequeridos()) return;
@@ -98,14 +99,13 @@ namespace ProjectStore
             };
 
             // Cerrar formulario con éxito
-            this.DialogResult = DialogResult.OK;
+            await apiConnection.PostProyecto(p);
             this.Close();
         }
 
         // Cierra el formulario sin guardar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

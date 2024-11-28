@@ -213,7 +213,22 @@ namespace ProjectStore
         // Inserta un nuevo proyecto.
         public async Task<bool> PostProyecto(Proyecto proyecto)
         {
-            return await PostEntity("http://localhost:4000/proyectos", proyecto);
+            var client = new HttpClient();
+            var jsonContent = JsonConvert.SerializeObject(proyecto);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = await client.PostAsync("http://localhost:4000/proyectos", content);
+                response.EnsureSuccessStatusCode(); // Lanza una excepción si el código de respuesta no es exitoso
+                return true;
+            }
+            catch (HttpRequestException e)
+            {
+                // Captura la excepción y maneja el error adecuadamente
+                MessageBox.Show("Error al enviar la solicitud: " + e.Message);
+                return false;
+            }
         }
 
         // Actualiza un proyecto.

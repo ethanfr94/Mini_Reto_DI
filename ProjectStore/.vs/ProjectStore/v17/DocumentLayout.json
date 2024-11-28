@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\entities\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\entities\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\addalumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\addalumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\addprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\addprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\addprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\addprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\modproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\modproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\addalumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\addalumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\configuration\\apiconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\configuration\\apiconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\modalumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\modalumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\modproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\modproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\modprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\modprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\addproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\addproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\configuration\\apiconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\configuration\\apiconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\addproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\addproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|d:\\usuarios\\dam210\\documents\\github\\mini_reto_di\\projectstore\\projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30336AA3-9E73-42BB-91DD-86D583DFA113}|ProjectStore\\ProjectStore.csproj|solutionrelative:projectstore\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +50,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 383,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ModProfesor.cs",
+              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProfesor.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\ModProfesor.cs",
+              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProfesor.cs",
+              "RelativeToolTip": "ProjectStore\\ModProfesor.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAiwE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T17:18:41.921Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -55,40 +76,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "APIConnection.cs",
-              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Configuration\\APIConnection.cs",
-              "RelativeDocumentMoniker": "ProjectStore\\Configuration\\APIConnection.cs",
-              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Configuration\\APIConnection.cs",
-              "RelativeToolTip": "ProjectStore\\Configuration\\APIConnection.cs",
-              "ViewState": "AQIAAMkAAAAAAAAAAADwv9gAAAAJAAAA",
+              "Title": "ModAlumno.cs",
+              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModAlumno.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\ModAlumno.cs",
+              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModAlumno.cs",
+              "RelativeToolTip": "ProjectStore\\ModAlumno.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAIwFIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T16:26:36.852Z",
+              "WhenOpened": "2024-11-28T17:40:28.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ModProyecto.cs",
-              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProyecto.cs",
-              "RelativeDocumentMoniker": "ProjectStore\\ModProyecto.cs",
-              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProyecto.cs",
-              "RelativeToolTip": "ProjectStore\\ModProyecto.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAwwEIAAAA4AAAA",
+              "Title": "AddAlumno.cs",
+              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddAlumno.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\AddAlumno.cs",
+              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddAlumno.cs",
+              "RelativeToolTip": "ProjectStore\\AddAlumno.cs",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAAAJYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T16:28:11.063Z",
+              "WhenOpened": "2024-11-28T17:40:15.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ModProyecto.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProyecto.cs",
-              "RelativeDocumentMoniker": "ProjectStore\\ModProyecto.cs",
-              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\ModProyecto.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ProjectStore\\ModProyecto.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "AddAlumno.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddAlumno.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\AddAlumno.cs",
+              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddAlumno.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ProjectStore\\AddAlumno.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T16:28:08.06Z",
+              "WhenOpened": "2024-11-28T17:40:12.95Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddProfesor.cs",
+              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddProfesor.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\AddProfesor.cs",
+              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddProfesor.cs",
+              "RelativeToolTip": "ProjectStore\\AddProfesor.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAuwIAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T17:39:41.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddProfesor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddProfesor.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\AddProfesor.cs",
+              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddProfesor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ProjectStore\\AddProfesor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T17:39:37.262Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "APIConnection.cs",
+              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Configuration\\APIConnection.cs",
+              "RelativeDocumentMoniker": "ProjectStore\\Configuration\\APIConnection.cs",
+              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Configuration\\APIConnection.cs",
+              "RelativeToolTip": "ProjectStore\\Configuration\\APIConnection.cs",
+              "ViewState": "AQIAAMkAAAAAAAAAAAAiwOgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T17:23:03.19Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -98,60 +157,35 @@
               "RelativeDocumentMoniker": "ProjectStore\\AddProyecto.cs",
               "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddProyecto.cs",
               "RelativeToolTip": "ProjectStore\\AddProyecto.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwFYAAAAoAAAA",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAAwHAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T15:59:27.02Z",
+              "WhenOpened": "2024-11-28T17:19:09.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AddProyecto.cs [Dise\u00F1o]",
               "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddProyecto.cs",
               "RelativeDocumentMoniker": "ProjectStore\\AddProyecto.cs",
               "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\AddProyecto.cs [Dise\u00F1o]",
               "RelativeToolTip": "ProjectStore\\AddProyecto.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T15:59:23.533Z",
+              "WhenOpened": "2024-11-28T17:19:06.841Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Principal.cs",
               "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
               "RelativeDocumentMoniker": "ProjectStore\\Principal.cs",
               "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
               "RelativeToolTip": "ProjectStore\\Principal.cs",
-              "ViewState": "AQIAAMAAAAAAAAAAAAAkwM0AAAA+AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T15:58:56.833Z",
+              "WhenOpened": "2024-11-28T16:40:37.6Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Classes.cs",
-              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Entities\\Classes.cs",
-              "RelativeDocumentMoniker": "ProjectStore\\Entities\\Classes.cs",
-              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Entities\\Classes.cs",
-              "RelativeToolTip": "ProjectStore\\Entities\\Classes.cs",
-              "ViewState": "AQIAALIAAAAAAAAAAAAiwLkAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T15:58:09.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs",
-              "RelativeDocumentMoniker": "ProjectStore\\Principal.cs",
-              "ToolTip": "D:\\Usuarios\\DAM210\\Documents\\GitHub\\Mini_Reto_DI\\ProjectStore\\ProjectStore\\Principal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ProjectStore\\Principal.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T15:58:02.072Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
