@@ -17,6 +17,13 @@ namespace ProjectStore
             InitializeComponent();
             cargaComboCiclo();
             cargaComboProfesor();
+            cargaComboTipo();
+        }
+
+        private void cargaComboTipo()
+        {
+            cmbTipo.Items.Add(Tipo.Final);
+            cmbTipo.Items.Add(Tipo.Intermodular);
         }
 
         // Carga los ciclos disponibles en el combo de ciclos
@@ -86,7 +93,7 @@ namespace ProjectStore
             Proyecto p = new Proyecto
             {
                 Nombre = txtNombre.Text,
-                Tipo = cmbTipo.SelectedText,
+                Tipo = cmbTipo.SelectedText.ToString() == Tipo.Final.ToString() ? "fin de ciclo" : "intermodular",
                 Resumen = txtResumen.Text,
                 AnioAcademico = (int)nudAnioAcademico.Value,
                 FechaPresentacion = dtpFechaPres.Value,
@@ -100,6 +107,7 @@ namespace ProjectStore
 
             // Cerrar formulario con éxito
             await apiConnection.PostProyecto(p);
+            
             this.Close();
         }
 

@@ -221,7 +221,6 @@
             // 
             cmbCiclo.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCiclo.FormattingEnabled = true;
-            cmbCiclo.Items.AddRange(new object[] { "Intermodular", "Final de Ciclo" });
             cmbCiclo.Location = new Point(154, 273);
             cmbCiclo.Name = "cmbCiclo";
             cmbCiclo.Size = new Size(200, 23);

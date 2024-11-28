@@ -257,11 +257,10 @@ namespace ProjectStore
 
             AddAlumno addAlumno = new AddAlumno();
             addAlumno.ShowDialog();
-            if (addAlumno.DialogResult == DialogResult.OK)
-            {
+            
                 alumnos = apiConnection.GetAllAlumnos().Result;
                 cargaAlumnos();
-            }
+            
         }
 
         // Método para abrir formulario de profesor
@@ -269,11 +268,10 @@ namespace ProjectStore
         {
             AddProfesor addProfesor = new AddProfesor();
             addProfesor.ShowDialog();
-            if (addProfesor.DialogResult == DialogResult.OK)
-            {
+            
                 profesores = apiConnection.GetAllProfesores().Result;
                 cargaProfesores();
-            }
+            
         }
 
         // Método para abrir formulario de proyecto
@@ -281,11 +279,10 @@ namespace ProjectStore
         {
             AddProyecto addProyecto = new AddProyecto();
             addProyecto.ShowDialog();
-            if (addProyecto.DialogResult == DialogResult.OK)
-            {
+            
                 proyectos = apiConnection.GetAllProyectos().Result;
                 cargaProyectos();
-            }
+            
         }
         /*
         // Método genérico para modificar un elemento (Profesor, Alumno o Proyecto)
@@ -486,5 +483,7 @@ namespace ProjectStore
             }
 
         }
+
+        
     }
 }
