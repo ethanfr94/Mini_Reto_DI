@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using minireto;
 using ProjectStore.Entities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjectStore
 {
@@ -217,13 +218,13 @@ namespace ProjectStore
         {
             verProyectoToolStripMenuItem.Visible = true;
             subirArchivoToolStripMenuItem.Visible = true;
-            
+
             if (profesor.Admin)
             {
                 addProyectosToolStripMenuItem.Visible = true;
                 modificarProyectosToolStripMenuItem.Visible = true;
                 borrarProyectoToolStripMenuItem.Visible = true;
-                
+
 
                 addProfesorToolStripMenuItem.Visible = false;
                 modificarProfesorToolStripMenuItem.Visible = false;
@@ -466,7 +467,7 @@ namespace ProjectStore
                 var id = ltvListaPrincipal.SelectedItems[0].SubItems[0].Text;
                 Proyecto proyecto = proyectos.Find(p => p.Id.ToString() == id);
 
-                if(proyecto.Tutor.Id == profesor.Id) modificarProyectosToolStripMenuItem.Visible = true;
+                if (proyecto.Tutor.Id == profesor.Id) modificarProyectosToolStripMenuItem.Visible = true;
 
                 ModProyecto modProyecto = new ModProyecto(proyecto);
                 modProyecto.ShowDialog();
@@ -662,10 +663,10 @@ namespace ProjectStore
             if (ltvListaPrincipal.SelectedItems.Count > 0)
             {
                 int id = Convert.ToInt32(ltvListaPrincipal.SelectedItems[0].SubItems[0].Text);
-                
+
                 VerProyecto verProyecto = new VerProyecto(id);
                 verProyecto.ShowDialog();
-                
+
             }
             else
             {
@@ -673,6 +674,22 @@ namespace ProjectStore
                                 "Atención",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
+            }
+        }
+
+
+        // Sin uso
+        private void ListViewSizeAdjustment()
+        {
+            if (ltvListaPrincipal.Columns.Count == 0)
+                return;
+
+            int totalWidth = ltvListaPrincipal.ClientSize.Width;
+            int columnWidth = totalWidth / ltvListaPrincipal.Columns.Count;
+
+            foreach (ColumnHeader column in ltvListaPrincipal.Columns)
+            {
+                column.Width = columnWidth;
             }
         }
     }

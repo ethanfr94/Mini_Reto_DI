@@ -166,14 +166,14 @@
             // tsmiVerProyectos
             // 
             tsmiVerProyectos.Name = "tsmiVerProyectos";
-            tsmiVerProyectos.Size = new Size(180, 22);
+            tsmiVerProyectos.Size = new Size(175, 22);
             tsmiVerProyectos.Text = "Ver Proyectos";
             tsmiVerProyectos.Click += verProyectosToolStripMenuItem_Click;
             // 
             // verProyectoToolStripMenuItem
             // 
             verProyectoToolStripMenuItem.Name = "verProyectoToolStripMenuItem";
-            verProyectoToolStripMenuItem.Size = new Size(180, 22);
+            verProyectoToolStripMenuItem.Size = new Size(175, 22);
             verProyectoToolStripMenuItem.Text = "Ver proyecto";
             verProyectoToolStripMenuItem.Visible = false;
             verProyectoToolStripMenuItem.Click += verProyectoToolStripMenuItem_Click;
@@ -181,7 +181,7 @@
             // addProyectosToolStripMenuItem
             // 
             addProyectosToolStripMenuItem.Name = "addProyectosToolStripMenuItem";
-            addProyectosToolStripMenuItem.Size = new Size(180, 22);
+            addProyectosToolStripMenuItem.Size = new Size(175, 22);
             addProyectosToolStripMenuItem.Text = "Añadir Proyecto";
             addProyectosToolStripMenuItem.Visible = false;
             addProyectosToolStripMenuItem.Click += añadirProyectosToolStripMenuItem_Click;
@@ -189,7 +189,7 @@
             // modificarProyectosToolStripMenuItem
             // 
             modificarProyectosToolStripMenuItem.Name = "modificarProyectosToolStripMenuItem";
-            modificarProyectosToolStripMenuItem.Size = new Size(180, 22);
+            modificarProyectosToolStripMenuItem.Size = new Size(175, 22);
             modificarProyectosToolStripMenuItem.Text = "Modificar Proyecto";
             modificarProyectosToolStripMenuItem.Visible = false;
             modificarProyectosToolStripMenuItem.Click += modificarProyectosToolStripMenuItem_Click;
@@ -197,7 +197,7 @@
             // borrarProyectoToolStripMenuItem
             // 
             borrarProyectoToolStripMenuItem.Name = "borrarProyectoToolStripMenuItem";
-            borrarProyectoToolStripMenuItem.Size = new Size(180, 22);
+            borrarProyectoToolStripMenuItem.Size = new Size(175, 22);
             borrarProyectoToolStripMenuItem.Text = "Borrar proyecto";
             borrarProyectoToolStripMenuItem.Visible = false;
             borrarProyectoToolStripMenuItem.Click += borrarProyectoToolStripMenuItem_Click;
@@ -212,7 +212,7 @@
             // subirArchivoToolStripMenuItem
             // 
             subirArchivoToolStripMenuItem.Name = "subirArchivoToolStripMenuItem";
-            subirArchivoToolStripMenuItem.Size = new Size(180, 22);
+            subirArchivoToolStripMenuItem.Size = new Size(168, 22);
             subirArchivoToolStripMenuItem.Text = "Subir archivo";
             subirArchivoToolStripMenuItem.Visible = false;
             subirArchivoToolStripMenuItem.Click += subirArchivoToolStripMenuItem_Click;
@@ -220,7 +220,7 @@
             // descargarArchivoToolStripMenuItem
             // 
             descargarArchivoToolStripMenuItem.Name = "descargarArchivoToolStripMenuItem";
-            descargarArchivoToolStripMenuItem.Size = new Size(180, 22);
+            descargarArchivoToolStripMenuItem.Size = new Size(168, 22);
             descargarArchivoToolStripMenuItem.Text = "Descargar archivo";
             // 
             // tsmiLogOut
@@ -253,7 +253,6 @@
             ClientSize = new Size(722, 397);
             Controls.Add(ltvListaPrincipal);
             Controls.Add(menuStrip1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "Principal";
