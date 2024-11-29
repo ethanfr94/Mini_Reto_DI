@@ -121,7 +121,7 @@ public enum Tipo
   Intermodular
 }
 
-Alumno{
+public class Alumno{
     private string id;
     private string nombre;
     private string apellidos;
@@ -135,7 +135,7 @@ Alumno{
     private Ciclo ciclo;
 }
 
-Profesor{
+public class Profesor{
     private string id;
     private string nombre;
     private string apellidos;
@@ -150,7 +150,7 @@ Profesor{
     private bool admin;
 }
 
-Ciclo{
+public class Ciclo{
     private string codigo;
     private string nombre;
     private string etapa;
@@ -159,7 +159,7 @@ Ciclo{
     private string familia;
 }
 
-Proyecto{
+public class Proyecto{
     private int id;
     private string nombre;
     private string tipo;
@@ -174,7 +174,7 @@ Proyecto{
     private Profesor? tutor;
 }
 
-Realizan{
+public class Realizan{
     private int id;
     private int calificacion;
     private string idAlumno;
@@ -182,13 +182,14 @@ Realizan{
     private string comentario;
 }
 
-Evaluan{
+public class Evaluan{
     private int id;
     private float calificacion_pers;
     private string comentario;
     private int idProyecto;
     private string idProfesor;
 }
+```
 
 ## Principales entidades del proyecto
 
