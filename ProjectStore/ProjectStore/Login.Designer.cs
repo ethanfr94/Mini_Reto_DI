@@ -35,95 +35,104 @@
             lblPassword = new Label();
             txtEmail = new TextBox();
             txtPassword = new TextBox();
-            lblHelpTitle = new Label();
-            llbContact = new LinkLabel();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            llbForget = new LinkLabel();
+            picProject = new PictureBox();
+            lblDescription = new Label();
+            ((System.ComponentModel.ISupportInitialize)picProject).BeginInit();
             SuspendLayout();
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblTitle.Location = new Point(14, 12);
+            lblTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(405, 69);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(113, 19);
+            lblTitle.Size = new Size(151, 25);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Inicio de Sesión";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(132, 149);
+            btnLogin.BackColor = Color.DodgerBlue;
+            btnLogin.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(582, 278);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(90, 23);
+            btnLogin.Size = new Size(80, 26);
             btnLogin.TabIndex = 3;
-            btnLogin.Text = "Iniciar Sesión";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += OnClickLogin;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(2, 93);
+            lblEmail.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEmail.Location = new Point(405, 151);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(44, 15);
+            lblEmail.Size = new Size(104, 15);
             lblEmail.TabIndex = 3;
-            lblEmail.Text = "E-Mail:";
+            lblEmail.Text = "Correo Electrónico";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
             lblPassword.BackColor = Color.Transparent;
-            lblPassword.Location = new Point(2, 123);
+            lblPassword.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPassword.Location = new Point(405, 217);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(70, 15);
+            lblPassword.Size = new Size(66, 15);
             lblPassword.TabIndex = 4;
-            lblPassword.Text = "Contraseña:";
+            lblPassword.Text = "Contraseña";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(77, 90);
+            txtEmail.Location = new Point(405, 169);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(203, 23);
+            txtEmail.Size = new Size(257, 23);
             txtEmail.TabIndex = 1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(77, 120);
+            txtPassword.Location = new Point(405, 235);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(203, 23);
+            txtPassword.Size = new Size(257, 23);
             txtPassword.TabIndex = 2;
             txtPassword.UseSystemPasswordChar = true;
             // 
-            // lblHelpTitle
+            // llbForget
             // 
-            lblHelpTitle.AutoSize = true;
-            lblHelpTitle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHelpTitle.Location = new Point(104, 305);
-            lblHelpTitle.Name = "lblHelpTitle";
-            lblHelpTitle.Size = new Size(100, 15);
-            lblHelpTitle.TabIndex = 8;
-            lblHelpTitle.Text = "¿Necesita ayuda?";
+            llbForget.AutoSize = true;
+            llbForget.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            llbForget.LinkColor = Color.SteelBlue;
+            llbForget.Location = new Point(405, 284);
+            llbForget.Name = "llbForget";
+            llbForget.Size = new Size(161, 15);
+            llbForget.TabIndex = 4;
+            llbForget.TabStop = true;
+            llbForget.Text = "¿Ha olvidado su contraseña?";
+            llbForget.LinkClicked += OnClickForget;
             // 
-            // llbContact
+            // picProject
             // 
-            llbContact.AutoSize = true;
-            llbContact.Location = new Point(210, 305);
-            llbContact.Name = "llbContact";
-            llbContact.Size = new Size(148, 15);
-            llbContact.TabIndex = 4;
-            llbContact.TabStop = true;
-            llbContact.Text = "soporte@projectstore.com";
-            llbContact.LinkClicked += OnClickLink;
+            picProject.BackColor = Color.LightGray;
+            picProject.Dock = DockStyle.Left;
+            picProject.Image = (Image)resources.GetObject("picProject.Image");
+            picProject.Location = new Point(0, 0);
+            picProject.Name = "picProject";
+            picProject.Size = new Size(381, 381);
+            picProject.SizeMode = PictureBoxSizeMode.CenterImage;
+            picProject.TabIndex = 9;
+            picProject.TabStop = false;
             // 
-            // pictureBox1
+            // lblDescription
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(28, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(301, 289);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            lblDescription.AutoSize = true;
+            lblDescription.Location = new Point(405, 99);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(257, 30);
+            lblDescription.TabIndex = 11;
+            lblDescription.Text = "Por favor, ingrese sus credenciales para acceder\r\na la gestión de los proyectos.";
             // 
             // Login
             // 
@@ -131,23 +140,23 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            ClientSize = new Size(358, 329);
-            Controls.Add(llbContact);
-            Controls.Add(lblHelpTitle);
+            ClientSize = new Size(704, 381);
+            Controls.Add(picProject);
+            Controls.Add(lblDescription);
+            Controls.Add(llbForget);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
             Controls.Add(lblPassword);
             Controls.Add(lblEmail);
             Controls.Add(btnLogin);
             Controls.Add(lblTitle);
-            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProjectStore | Login";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picProject).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,8 +169,8 @@
         private Label lblPassword;
         private TextBox txtEmail;
         private TextBox txtPassword;
-        private Label lblHelpTitle;
-        private LinkLabel llbContact;
-        private PictureBox pictureBox1;
+        private LinkLabel llbForget;
+        private PictureBox picProject;
+        private Label lblDescription;
     }
 }
