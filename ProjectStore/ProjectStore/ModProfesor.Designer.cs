@@ -117,7 +117,6 @@
             // 
             // cmbGenero
             // 
-            cmbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGenero.Enabled = false;
             cmbGenero.FormattingEnabled = true;
             cmbGenero.Location = new Point(24, 164);
