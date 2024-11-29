@@ -31,7 +31,7 @@ namespace ProjectStore
         {
             foreach (Ciclo ciclo in Principal.ciclos)
             {
-                cmbCiclo.Items.Add(ciclo.Codigo);
+                cmbCiclo.Items.Add(ciclo.Nombre);
             }
         }
 

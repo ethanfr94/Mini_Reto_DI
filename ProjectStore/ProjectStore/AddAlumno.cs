@@ -34,7 +34,7 @@ namespace ProjectStore
         // Carga los ciclos disponibles al combo
         private async void cargaComboCiclo()
         {
-            
+
             ciclos = await apiConnection.GetAllCiclos();
             foreach (Ciclo ciclo in ciclos)
             {
@@ -150,6 +150,11 @@ namespace ProjectStore
         {
             this.DialogResult = DialogResult.Cancel;
             this.Dispose();
+        }
+
+        private void AddAlumno_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

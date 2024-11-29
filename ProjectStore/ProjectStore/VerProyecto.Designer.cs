@@ -47,16 +47,17 @@
             // txtResumen
             // 
             txtResumen.Enabled = false;
-            txtResumen.Location = new Point(12, 341);
+            txtResumen.Location = new Point(24, 401);
             txtResumen.Multiline = true;
             txtResumen.Name = "txtResumen";
-            txtResumen.Size = new Size(328, 122);
+            txtResumen.ScrollBars = ScrollBars.Vertical;
+            txtResumen.Size = new Size(360, 66);
             txtResumen.TabIndex = 3;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(269, 21);
+            pictureBox1.Location = new Point(313, 24);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(71, 63);
             pictureBox1.TabIndex = 5;
@@ -65,16 +66,18 @@
             // lbl_resumen
             // 
             lbl_resumen.AutoSize = true;
-            lbl_resumen.Location = new Point(12, 320);
+            lbl_resumen.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lbl_resumen.Location = new Point(24, 383);
             lbl_resumen.Name = "lbl_resumen";
             lbl_resumen.Size = new Size(125, 15);
             lbl_resumen.TabIndex = 6;
-            lbl_resumen.Text = "Resumen del proyecto";
+            lbl_resumen.Text = "Resumen del Proyecto";
             // 
             // lbl_autor
             // 
             lbl_autor.AutoSize = true;
-            lbl_autor.Location = new Point(12, 76);
+            lbl_autor.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lbl_autor.Location = new Point(24, 176);
             lbl_autor.Name = "lbl_autor";
             lbl_autor.Size = new Size(53, 15);
             lbl_autor.TabIndex = 8;
@@ -83,7 +86,8 @@
             // lbl_profesor
             // 
             lbl_profesor.AutoSize = true;
-            lbl_profesor.Location = new Point(12, 172);
+            lbl_profesor.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lbl_profesor.Location = new Point(24, 115);
             lbl_profesor.Name = "lbl_profesor";
             lbl_profesor.Size = new Size(35, 15);
             lbl_profesor.TabIndex = 9;
@@ -92,70 +96,76 @@
             // lbl_curso
             // 
             lbl_curso.AutoSize = true;
-            lbl_curso.Location = new Point(12, 51);
+            lbl_curso.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lbl_curso.Location = new Point(24, 80);
             lbl_curso.Name = "lbl_curso";
-            lbl_curso.Size = new Size(41, 15);
+            lbl_curso.Size = new Size(44, 15);
             lbl_curso.TabIndex = 12;
-            lbl_curso.Text = "Curso:";
+            lbl_curso.Text = "{curso}";
             // 
             // txtEvaluan
             // 
             txtEvaluan.Enabled = false;
-            txtEvaluan.Location = new Point(12, 243);
+            txtEvaluan.Location = new Point(24, 298);
             txtEvaluan.Multiline = true;
             txtEvaluan.Name = "txtEvaluan";
-            txtEvaluan.Size = new Size(328, 60);
+            txtEvaluan.ScrollBars = ScrollBars.Vertical;
+            txtEvaluan.Size = new Size(360, 66);
             txtEvaluan.TabIndex = 14;
             // 
             // lbl_evaluado
             // 
             lbl_evaluado.AutoSize = true;
-            lbl_evaluado.Location = new Point(12, 225);
+            lbl_evaluado.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lbl_evaluado.Location = new Point(24, 280);
             lbl_evaluado.Name = "lbl_evaluado";
-            lbl_evaluado.Size = new Size(79, 15);
+            lbl_evaluado.Size = new Size(76, 15);
             lbl_evaluado.TabIndex = 15;
-            lbl_evaluado.Text = "Evaluado por:";
+            lbl_evaluado.Text = "Evaluado por";
             // 
             // lbl_ano
             // 
             lbl_ano.AutoSize = true;
-            lbl_ano.Location = new Point(12, 36);
+            lbl_ano.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lbl_ano.Location = new Point(24, 55);
             lbl_ano.Name = "lbl_ano";
-            lbl_ano.Size = new Size(90, 15);
+            lbl_ano.Size = new Size(92, 15);
             lbl_ano.TabIndex = 16;
-            lbl_ano.Text = "Año academico";
+            lbl_ano.Text = "Año Académico";
             // 
             // txt_profesor
             // 
             txt_profesor.Enabled = false;
-            txt_profesor.Location = new Point(12, 190);
+            txt_profesor.Location = new Point(24, 133);
             txt_profesor.Name = "txt_profesor";
-            txt_profesor.Size = new Size(328, 23);
+            txt_profesor.Size = new Size(360, 23);
             txt_profesor.TabIndex = 11;
             // 
             // txtAutor
             // 
             txtAutor.Enabled = false;
-            txtAutor.Location = new Point(12, 102);
+            txtAutor.Location = new Point(24, 194);
             txtAutor.Multiline = true;
             txtAutor.Name = "txtAutor";
-            txtAutor.Size = new Size(328, 60);
+            txtAutor.ScrollBars = ScrollBars.Vertical;
+            txtAutor.Size = new Size(360, 66);
             txtAutor.TabIndex = 17;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(12, 9);
+            lblNombre.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblNombre.Location = new Point(24, 24);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(37, 15);
+            lblNombre.Size = new Size(59, 21);
             lblNombre.TabIndex = 18;
-            lblNombre.Text = "Titulo";
+            lblNombre.Text = "{título}";
             // 
             // VerProyecto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(352, 479);
+            ClientSize = new Size(407, 491);
             Controls.Add(lblNombre);
             Controls.Add(txtAutor);
             Controls.Add(lbl_ano);
@@ -172,8 +182,8 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "VerProyecto";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Visualizador de proyectos";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Visualizar Proyecto";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

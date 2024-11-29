@@ -32,7 +32,7 @@ namespace ProjectStore
             txtArchivos.Text = proyecto.Archivos;
             txtComentarios.Text = proyecto.Comentarios;
             cmbCiclo.Text = proyecto.Ciclo.Nombre;
-            cmbTutor.Text = proyecto.Tutor.Nombre;
+            cmbTutor.Text = proyecto.Tutor.Nombre + " " + proyecto.Tutor.Apellidos;
         }
 
         // Validar los campos requeridos antes de modificar
@@ -64,7 +64,7 @@ namespace ProjectStore
             if (proyecto.Tutor.Nombre != cmbTutor.Text)
                 proyecto.Tutor = Principal.profesores[cmbTutor.SelectedIndex];
 
-           bool res = await apiConnection.UpdateProyecto(proyecto);
+            bool res = await apiConnection.UpdateProyecto(proyecto);
             if (res)
             {
                 MessageBox.Show("Proyecto modificado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,10 +95,10 @@ namespace ProjectStore
             if (ConfirmarModificacion())
             {
                 //if (ValidarCampos())
-               // {
-                    ModificarProyecto();
-                    this.DialogResult = DialogResult.OK;
-                    this.Dispose();
+                // {
+                ModificarProyecto();
+                this.DialogResult = DialogResult.OK;
+                this.Dispose();
                 //}
             }
         }

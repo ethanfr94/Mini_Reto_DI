@@ -21,7 +21,7 @@ namespace minireto
             this.profesores = profesores;
             InitializeComponent();
             carga(id);
-            
+
         }
 
         private async void carga(int id)
@@ -34,7 +34,7 @@ namespace minireto
 
             lblNombre.Text = proyecto.Nombre;
 
-            lbl_ano.Text += " "+proyecto.AnioAcademico.ToString();
+            lbl_ano.Text += " " + proyecto.AnioAcademico.ToString();
 
             lbl_curso.Text = proyecto.Ciclo.Nombre.ToString();
 
@@ -96,7 +96,5 @@ namespace minireto
 
 
         }
-
-        
     }
 }
