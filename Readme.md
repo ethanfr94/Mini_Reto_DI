@@ -14,7 +14,7 @@
 3. [Metodos principales](#metodos-principales)
 4. [Estructura de ProjectStore](#estructura-de-projectstore)
 5. [Modelos (Entities)](#modelos-entities)
-6. [Vistas](#Vistas)
+6. [Vistas](#vistas)
 
 ## Introducción🚀
 
