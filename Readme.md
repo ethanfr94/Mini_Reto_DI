@@ -31,20 +31,28 @@ utilizando HttpClient para conectarnos mediante internet a la APi y utilizar dic
 
 ### Metodos para recoger una entidad concreta
 
-  GetAlumnoById(string id)
-  GetProfesorById(string id)
-  GetProyectoById(int id)
-  GetCicloById(string id)
+`GetAlumnoById(string id)`
+
+`GetProfesorById(string id)`
+
+`GetProyectoById(int id)`
+
+`GetCicloById(string id)`
 
 
 ### Metodos para recoger todos los registros de cada tabla
 
-  GetAllAlumnos()
-  GetAllProfesores()
-  GetAllCiclos()
-  GetAllProyectos()
-  GetRealizan()
-  GetEvaluan()
+`GetAllAlumnos()`
+
+`GetAllProfesores()`
+
+`GetAllCiclos()`
+
+`GetAllProyectos()`
+
+`GetRealizan()`
+
+`GetEvaluan()`
 
 ### Metodos para insertar registros
 
