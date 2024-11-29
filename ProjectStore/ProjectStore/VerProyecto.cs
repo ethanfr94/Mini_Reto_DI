@@ -7,11 +7,13 @@ namespace minireto
         private readonly APIConnection apiConnection = new APIConnection();
         private List<Realizan> realiza;
         private List<Evaluan> evalua;
-        private List<string> alumnos;
-        private List<string> profesores;
+        private List<Alumno> alumnos;
+        private List<Profesor> profesores;
         private Proyecto proyecto;
-        List<Alumno> als;
-        List<Profesor> prs;
+        List<Alumno> als = new List<Alumno>();
+        List<Profesor> prs = new List<Profesor>();
+        Realizan r;
+        Evaluan e;
 
         public VerProyecto(int id)
         {
@@ -24,11 +26,11 @@ namespace minireto
 
         private async void carga(int id)
         {
-            realiza = await apiConnection.GetRealizanId(id);
-            evalua = await apiConnection.GetEvaluanId(id);
+            realiza = await apiConnection.GetRealizan();
+            evalua = await apiConnection.GetEvaluan();
             proyecto = await apiConnection.GetProyectoById(id);
-            alumnos = await apiConnection.GetAutores(id);
-            profesores = await apiConnection.GetEvaluadores(id);
+            alumnos = await apiConnection.GetAllAlumnos();
+            profesores = await apiConnection.GetAllProfesores();
 
             lblNombre.Text = proyecto.Nombre;
 
@@ -40,11 +42,35 @@ namespace minireto
 
             txtResumen.Text = proyecto.Resumen;
 
+            txtAutor.Text = "Autores del proyecto";
+
+            txtEvaluan.Text = "Profesores que evaluan";
+
+
+            /*foreach (var re in realiza)
+            {
+                if (re.IdProyecto == proyecto.Id)
+                {
+                    r = re;
+                    break;
+                }
+            }
+
+            foreach (var ev in evalua)
+            {
+                if (ev.IdProyecto == proyecto.Id)
+                {
+                    e = ev;
+                    break;
+                }
+            }
+
             foreach (var alumno in alumnos)
             {
-                als = new List<Alumno>();
-                Alumno al = await apiConnection.GetAlumnoById(alumno);
-                als.Add(al);
+              if(alumno.Id == r.IdAlumno)
+                {
+                    als.Add(alumno);
+                }
             }
 
             foreach (Alumno al in als){
@@ -53,15 +79,16 @@ namespace minireto
 
             foreach (var profesor in profesores)
             {
-                prs = new List<Profesor>();
-                Profesor pr = await apiConnection.GetProfesorById(profesor);
-                prs.Add(pr);
+               if(profesor.Id == e.IdProfesor)
+                {
+                    prs.Add(profesor);
+                }
             }
 
             foreach (Profesor pr in prs)
             {
                 txtEvaluan.Text += pr.Nombre + " " + pr.Apellidos + "\n";
-            }
+            }*/
 
 
 

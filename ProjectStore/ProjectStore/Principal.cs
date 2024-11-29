@@ -216,6 +216,7 @@ namespace ProjectStore
         private async void verProyectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             verProyectoToolStripMenuItem.Visible = true;
+            subirArchivoToolStripMenuItem.Visible = true;
             
             if (profesor.Admin)
             {
