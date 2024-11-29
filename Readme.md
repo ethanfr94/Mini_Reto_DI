@@ -56,21 +56,27 @@ utilizando HttpClient para conectarnos mediante internet a la APi y utilizar dic
 
 ### Metodos para insertar registros
 
-  PostAlumno(Alumno alumno)
-  PostProfesor(Profesor profesor)
-  PostProyecto(Proyecto proyecto)
-  PostEntity<T>(string url, T entidad) -- (generico)
+  `PostAlumno(Alumno alumno)`
+  
+  `PostProfesor(Profesor profesor)`
+  
+  `PostProyecto(Proyecto proyecto)`
+  
+  `PostEntity<T>(string url, T entidad) //genérico`
 
 ### Metodos de modificacion de registros
 
-  UpdateAlumno(Alumno alumno)
-  UpdateProfesor(Profesor profesor)
-  UpdateProyecto(Proyecto proyecto)
-  UpdateEntity<T>(string url, T entidad) -- (generico)
+  `UpdateAlumno(Alumno alumno)`
+  
+  `UpdateProfesor(Profesor profesor)`
+  
+  `UpdateProyecto(Proyecto proyecto)`
+  
+  `UpdateEntity<T>(string url, T entidad) //genérico`
 
 ### Metodo de comprobacion de usuario para el Loggin
 
-  GetProfesorByCredentials(string correo, string password) -- recoge si existe en la base de datos un profesor con esos datos
+  `GetProfesorByCredentials(string correo, string password) //recoge si existe en la base de datos un profesor con esos datos`
 
 ### Metodos de subida y descarga de ficheros
 
