@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using minireto;
 using ProjectStore.Entities;
 
 namespace ProjectStore
@@ -23,7 +24,7 @@ namespace ProjectStore
 
             profesor = p;
             this.Text = $"{profesor.Nombre} {profesor.Apellidos}";
-            esAdmin(p);
+            //esAdmin(p);
         }
 
         private async void Principal_Load(object sender, EventArgs e)
@@ -45,6 +46,10 @@ namespace ProjectStore
                 modificarAlumnoToolStripMenuItem.Visible = true;
                 modificarProfesorToolStripMenuItem.Visible = true;
                 modificarProyectosToolStripMenuItem.Visible = true;
+                borrarAlumnoToolStripMenuItem.Visible = true;
+                borrarProfesorToolStripMenuItem.Visible = true;
+                borrarProyectoToolStripMenuItem.Visible = true;
+                verProyectoToolStripMenuItem.Visible = true;
             }
         }
 
@@ -87,6 +92,21 @@ namespace ProjectStore
         // Evento para visualizar los profesores
         private async void tsmiVerProfesores_Click(object sender, EventArgs e)
         {
+            if (profesor.Admin)
+            {
+                addProfesorToolStripMenuItem.Visible = true;
+                modificarProfesorToolStripMenuItem.Visible = true;
+                borrarProfesorToolStripMenuItem.Visible = true;
+
+                addAlumnoToolStripMenuItem.Visible = false;
+                modificarAlumnoToolStripMenuItem.Visible = false;
+                borrarAlumnoToolStripMenuItem.Visible = false;
+                addProyectosToolStripMenuItem.Visible = false;
+                modificarProyectosToolStripMenuItem.Visible = false;
+                borrarProyectoToolStripMenuItem.Visible = false;
+                verProyectoToolStripMenuItem.Visible = false;
+            }
+
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
 
@@ -136,6 +156,21 @@ namespace ProjectStore
         // Evento para visualizar los alumnos
         private async void tsmiVerAlumnos_Click(object sender, EventArgs e)
         {
+            if (profesor.Admin)
+            {
+                addAlumnoToolStripMenuItem.Visible = true;
+                modificarAlumnoToolStripMenuItem.Visible = true;
+                borrarAlumnoToolStripMenuItem.Visible = true;
+
+                addProfesorToolStripMenuItem.Visible = false;
+                modificarProfesorToolStripMenuItem.Visible = false;
+                borrarProfesorToolStripMenuItem.Visible = false;
+                addProyectosToolStripMenuItem.Visible = false;
+                modificarProyectosToolStripMenuItem.Visible = false;
+                borrarProyectoToolStripMenuItem.Visible = false;
+                verProyectoToolStripMenuItem.Visible = false;
+            }
+
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
 
@@ -180,6 +215,26 @@ namespace ProjectStore
         // Evento para visualizar los proyectos
         private async void verProyectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            verProyectoToolStripMenuItem.Visible = true;
+            
+            if (profesor.Admin)
+            {
+                addProyectosToolStripMenuItem.Visible = true;
+                modificarProyectosToolStripMenuItem.Visible = true;
+                borrarProyectoToolStripMenuItem.Visible = true;
+                
+
+                addProfesorToolStripMenuItem.Visible = false;
+                modificarProfesorToolStripMenuItem.Visible = false;
+                borrarProfesorToolStripMenuItem.Visible = false;
+                addAlumnoToolStripMenuItem.Visible = false;
+                modificarAlumnoToolStripMenuItem.Visible = false;
+                borrarAlumnoToolStripMenuItem.Visible = false;
+            }
+            addProyectosToolStripMenuItem.Visible = true;
+            modificarProyectosToolStripMenuItem.Visible = true;
+            borrarProyectoToolStripMenuItem.Visible = true;
+
             ltvListaPrincipal.Items.Clear();
             ltvListaPrincipal.Columns.Clear();
 
@@ -410,6 +465,8 @@ namespace ProjectStore
                 var id = ltvListaPrincipal.SelectedItems[0].SubItems[0].Text;
                 Proyecto proyecto = proyectos.Find(p => p.Id.ToString() == id);
 
+                if(proyecto.Tutor.Id == profesor.Id) modificarProyectosToolStripMenuItem.Visible = true;
+
                 ModProyecto modProyecto = new ModProyecto(proyecto);
                 modProyecto.ShowDialog();
 
@@ -595,6 +652,26 @@ namespace ProjectStore
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void verProyectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ltvListaPrincipal.SelectedItems.Count > 0)
+            {
+                int id = Convert.ToInt32(ltvListaPrincipal.SelectedItems[0].SubItems[0].Text);
+                
+                VerProyecto verProyecto = new VerProyecto(id);
+                verProyecto.ShowDialog();
+                
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un proyecto para ver.",
+                                "Atención",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
     }

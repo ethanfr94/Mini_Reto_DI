@@ -81,7 +81,6 @@ C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0
 C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.ModProfesor.resources
 C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.ModProyecto.resources
 C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.Principal.resources
-C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\minireto.Proyectoindividual.resources
 C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.csproj.GenerateResource.cache
 C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.AssemblyInfoInputs.cache
@@ -186,3 +185,4 @@ D:\Usuarios\DAM210\Documents\GitHub\Mini_Reto_DI\ProjectStore\ProjectStore\obj\D
 D:\Usuarios\DAM210\Documents\GitHub\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.genruntimeconfig.cache
 D:\Usuarios\DAM210\Documents\GitHub\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ref\ProjectStore.dll
 D:\Usuarios\dam2\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\ProjectStore.Properties.Resources.resources
+C:\Users\usuario\Desktop\Mini_Reto_DI\ProjectStore\ProjectStore\obj\Debug\net8.0-windows\minireto.VerProyecto.resources
