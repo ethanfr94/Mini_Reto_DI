@@ -80,14 +80,17 @@ utilizando HttpClient para conectarnos mediante internet a la APi y utilizar dic
 
 ### Metodos de subida y descarga de ficheros
 
-  Download(int id_proyecto, string etapa_proyecto)
-  Upload(int id_proyecto, string rutaFichero)
+  `Download(int id_proyecto, string etapa_proyecto)`
+  
+  `Upload(int id_proyecto, string rutaFichero)`
 
 ### Metodos de eliminacion de registros concretos
 
-  DeleteProyecto(int id)
-  DeleteProfesor(string id)
-  DeleteAlumno(string id)
+  `DeleteProyecto(int id)`
+  
+  `DeleteProfesor(string id)`
+  
+  `DeleteAlumno(string id)`
 
 ## Estructura de ProjectStore🏗️
 
@@ -96,13 +99,29 @@ y las APIUtilities
 
 ## Modelos (Entities)📚
 
-public enum Genero{ M, F, NB }
+```
+public enum Genero
+{
+  M,
+  F,
+  NB
+}
 
-public enum Familia{ ADG, FME, IFC, TMA }
+public enum Familia
+{
+  ADG,
+  FME,
+  IFC,
+  TMA
+}
 
-public enum Tipo{ Final, Intermodular }
+public enum Tipo
+{
+  Final,
+  Intermodular
+}
 
--   Alumno{
+Alumno{
     private string id;
     private string nombre;
     private string apellidos;
@@ -116,7 +135,7 @@ public enum Tipo{ Final, Intermodular }
     private Ciclo ciclo;
 }
 
--   Profesor{
+Profesor{
     private string id;
     private string nombre;
     private string apellidos;
@@ -131,7 +150,7 @@ public enum Tipo{ Final, Intermodular }
     private bool admin;
 }
 
--   Ciclo{
+Ciclo{
     private string codigo;
     private string nombre;
     private string etapa;
@@ -140,7 +159,7 @@ public enum Tipo{ Final, Intermodular }
     private string familia;
 }
 
--   Proyecto{
+Proyecto{
     private int id;
     private string nombre;
     private string tipo;
@@ -155,7 +174,7 @@ public enum Tipo{ Final, Intermodular }
     private Profesor? tutor;
 }
 
--   Realizan{
+Realizan{
     private int id;
     private int calificacion;
     private string idAlumno;
@@ -163,7 +182,7 @@ public enum Tipo{ Final, Intermodular }
     private string comentario;
 }
 
--   Evaluan{
+Evaluan{
     private int id;
     private float calificacion_pers;
     private string comentario;
@@ -231,4 +250,3 @@ Además, se utilizan los **Enums** para valores constantes como género, familia
 
  En este formulario se nos muestran los datos del proyecto seleccionado en la tabla de proyectos de la ventana principal y nos permite
  ver los datos del proyecto seleccionado.
-
