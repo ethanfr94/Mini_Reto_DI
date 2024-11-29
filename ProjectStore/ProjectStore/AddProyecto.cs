@@ -106,7 +106,22 @@ namespace ProjectStore
             };
 
             // Cerrar formulario con éxito
-            await apiConnection.PostProyecto(p);
+            bool res = await apiConnection.PostProyecto(p);
+
+            if(res)
+            {
+                MessageBox.Show("Proyecto añadido correctamente",
+                                "Exito",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al añadir el proyecto",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
 
             this.Dispose();
         }

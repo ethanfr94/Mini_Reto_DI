@@ -37,7 +37,7 @@ namespace ProjectStore
         // Valida los campos requeridos antes de modificar
         private bool ValidarCampos()
         {
-            var campos = new[] { txtEmail.Text, txtContraseña.Text, cmbGenero.Text };
+            var campos = new[] { txtEmail.Text, txtContraseña.Text };
 
             if (campos.Any(c => string.IsNullOrWhiteSpace(c)))
             {
